@@ -1,2 +1,60 @@
 mixin header
-	header.header
+	header.header.js-header
+		.header__in
+			.header__top_row
+				a.header__logo_w(href="#")
+					img(src="images/logo.png", alt="site logo").header__logo
+				ul.header__control
+					li.header__control_item
+						a(href="#").header__control_phone +7 (989) 261-39-83
+					li.header__control_item
+						.header__control_location_dropdown
+							button(type="button").header__control_location.btn_1
+								span.header__control_location_icon
+									+icon('mark', 'icon--size_mod')
+								span.header__control_location_title Москва
+								span.header__control_location_arrow_icon
+									+icon('arrow-down', 'icon--size_mod')
+							//- ul.header__control_location_list
+							//- 	each item in ['Москва', 'Санкт-Петербург', 'Ростов', 'Краснодар', 'Севастополь', 'Калининград']
+							//- 		li.header__control_location_item= item
+
+					li.header__control_item.header__control_item--search_mod
+						form.header__control_search_form
+							.header__control_search
+								+form_input({
+									placeholder: 'Введите название товара...',
+									id: 'header-search',
+									type: 'search',
+									block_class:'form_input header__search_w',
+									class: 'form_input__element header__search'
+								})
+								button(type="submit" aria-lebel="search button").header__search_btn
+									+icon('search', 'icon--size_mod')
+
+					li.header__control_item
+						a(href="#").header__control_whatsapp.btn_1
+							span.header__control_whatsapp_icon
+								+icon('whatsapp', 'icon--size_mod')
+							span.header__control_whatsapp_title Написать в WhatsApp
+
+					li.header__control_item
+						a.header__control_basket(href="#").header__control_basket--active_state
+							+icon('basket', 'icon--size_mod')
+							span.header__control_basket_item
+
+					li.header__control_item
+						a.header__control_login(href="#") Войти
+
+			.header__bottom_row
+				button.header__catalog_trigger.js-header-catalog-menu-trigger(type="button" aria-label="Toggle menu")
+					span.header__catalog_icon
+						+icon('menu', 'icon--size_mod')
+					span.header__catalog_title Каталог товаров
+
+				ul.header__catalog_list
+					each item in ['Обучающие курсы', 'Видеообзоры', 'Видеоотзывы', 'Гарантии', 'Акции', 'Статьи', 'Поиск по товарам', 'Контакты']
+						li.header__catalog_item
+							a(href="#").header__catalog_link= item
+
+			include ../../blocks/menu-catalog

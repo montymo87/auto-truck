@@ -1,3 +1,56 @@
-// .btn_base {
+.btn_1 {
+	@include btn_style_red;
+	@include btn_size_normal;
 
-// }
+	.btn_icon:not(:last-child) {
+		margin-right: 1rem;
+	}
+
+	.btn_icon:not(:first-child) {
+		margin-left: 1rem;
+	}
+}
+
+.btn_2 {
+	@include btn_style_black;
+	@include btn_size_normal;
+
+	.btn_icon:not(:last-child) {
+		margin-right: 1rem;
+	}
+
+	.btn_icon:not(:first-child) {
+		margin-left: 1rem;
+	}
+
+	.btn_icon {
+		width: 2.6rem;
+		height: 2.6rem;
+	}
+}
+
+.btn_3 {
+	@include btn_style_border_red;
+	@include btn_size_normal;
+
+	// @include btn_style_black;
+	// @include btn_size_normal;
+
+	.btn_icon:not(:last-child) {
+		margin-right: 1rem;
+	}
+
+	.btn_icon:not(:first-child) {
+		margin-left: 1rem;
+	}
+
+	.btn_icon {
+		width: 2.4rem;
+		height: 2.4rem;
+	}
+}
+
+.btn_4 {
+	@include btn_style_red;
+	@include btn_size_l;
+}

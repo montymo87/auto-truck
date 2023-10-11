@@ -7,14 +7,30 @@
 :root {
 	--full-screen: calc(var(--vh, 1vh) * 100);
 
-	--height-header: 10rem;
+	--height-header: 16rem;
 	--height-footer: 10rem;
-	--gl-indent: 5rem;
+
+	@include bp($point_2, min) {
+		--gl-indent: 4rem;
+		--gl-vr-indent: 7rem;
+	}
+	@include bp($point_3) {
+		--gl-indent: 2rem;
+		--gl-vr-indent: 3rem;
+	}
 }
 
 html {
 	height: 100%;
-	font: 400 calc(100vw / 1920 * 10) / 1.33 $font_1;
+	font-weight: 400;
+	line-height: 1.2;
+	font-family: $font_1;
+
+	@include bp(1921px, min) {
+		font-size: calc(100vw / 1920 * 10);
+	}
+
+	font-size: 10px;
 }
 
 body {
@@ -34,6 +50,17 @@ body {
 
 	@supports (display: grid) {
 		display: block;
+	}
+
+	&:after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: var(--height-header);
+		background-color: $black_2;
+		content: '';
 	}
 }
 

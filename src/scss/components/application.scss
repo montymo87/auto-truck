@@ -1,0 +1,102 @@
+.application {
+	color: $white;
+}
+
+.application__row {
+	position: relative;
+
+	background: linear-gradient(90deg, #252525 0%, #0a0909 100%);
+}
+
+.application__col {
+	position: relative;
+	z-index: 1;
+
+	@include bp(1440px, min) {
+		width: 65%;
+		padding: 10rem 0 10rem 12rem;
+	}
+	@include bp(1439px, $point_2) {
+		max-width: 52rem;
+		width: 100%;
+		padding: 10rem 0 10rem 12rem;
+	}
+	@include bp($point_3) {
+		max-width: 52rem;
+		width: 100%;
+		margin: 0 auto;
+		padding: 4rem 2rem;
+	}
+}
+
+.application__title {
+	@include text_l;
+	font-weight: 600;
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+
+	@include bp($point_3) {
+		text-align: center;
+	}
+}
+
+.application__form_w {
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+}
+
+.application__form_in {
+	display: grid;
+
+	gap: 2rem;
+
+	@include bp(1440px, min) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@include bp(1439px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.application__form_btn_w {
+	@include bp($point_3) {
+		@include flex_block(row, wrap, center, center, center);
+	}
+}
+
+.application__rights {
+	max-width: 46rem;
+	font-size: 1.1rem;
+
+	font-weight: 500;
+	color: $gray_2;
+
+	@include bp($point_3) {
+		text-align: center;
+	}
+}
+
+.application__img_w {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: block;
+	width: 100%;
+	height: 110%;
+}
+
+.application__img {
+	@include cover_img;
+
+	@include bp(1440px, $point_2) {
+		object-position: 82%;
+	}
+
+	@include bp($point_3) {
+		display: none;
+	}
+}

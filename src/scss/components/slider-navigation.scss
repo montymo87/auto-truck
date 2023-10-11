@@ -1,0 +1,48 @@
+.slider_navigation {
+	@include flex_block(row, wrap, center, center, center);
+
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+
+	width: 6rem;
+	height: 6rem;
+	// margin-top: -4rem;
+	padding: 1.7rem;
+
+	color: $white;
+	background-color: $red;
+	border-radius: 50%;
+	border: 2px solid $red;
+
+	transition: background-color 0.3s ease, color ease 0.3s, opacity ease 0.3s;
+	cursor: pointer;
+
+	&.swiper-button-disabled,
+	&.swiper-button-lock {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&.slider_navigation--next_mod {
+		right: -3rem;
+	}
+	&.slider_navigation--prev_mod {
+		left: -3rem;
+		transform: rotate(180deg);
+	}
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			background-color: $white;
+			color: $red;
+		}
+	}
+
+	// --------------------------------------------- Mods
+	// .some_section & { ... }
+
+	// --------------------------------------------- Mods ###
+}

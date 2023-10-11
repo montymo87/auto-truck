@@ -6,12 +6,317 @@
 
 	height: var(--height-header);
 	width: 100%;
+	padding: 0 var(--gl-indent);
 
 	font-size: 1rem;
 
 	will-change: transform;
+	transition: transform ease 0.3s;
 
 	@include z-index(header);
+	background-color: $white;
+
+	&:after {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		display: block;
+		width: 100%;
+		height: 5rem;
+		content: '';
+		background-color: $black_2;
+	}
+
+	&.header--scroll_state {
+	}
+
+	&.header--pos_state {
+		transform: translateY(-11rem);
+	}
 }
 
 //------------------------------------------------------------layout###
+
+.header__in {
+	position: relative;
+	z-index: 1;
+	max-width: $page_width;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.header__top_row {
+	@include flex_block(row, wrap, space-between, center, center);
+
+	min-height: 11rem;
+}
+
+.header__logo_w {
+	display: block;
+	width: 16.8rem;
+	height: 8.8rem;
+
+	margin-right: 3.5rem;
+}
+
+.header__logo {
+	@include contain_img;
+}
+
+.header__control {
+	@include flex_block(row, wrap, flex-start, center, center);
+
+	margin: 0 -4rem -2rem 0;
+
+	flex-grow: 1;
+}
+
+.header__control_item {
+	padding: 0 4rem 2rem 0;
+
+	&.header__control_item--search_mod {
+		flex-grow: 1;
+	}
+}
+
+.header__control_phone {
+	position: relative;
+
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: $red;
+	transition: opacity ease 0.3s;
+
+	&:after {
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 1px;
+		background-color: $red;
+		content: '';
+		transition: opacity ease 0.3s;
+	}
+
+	&:hover {
+		opacity: 0.7;
+		text-decoration: none;
+
+		&::after {
+			opacity: 0;
+		}
+	}
+}
+
+.header__control_location_dropdown {
+	position: relative;
+}
+
+.header__control_location_list {
+	position: absolute;
+
+	left: 0;
+	top: 115%;
+	width: 18rem;
+
+	background-color: $white;
+	border: 1px solid $gray_2;
+	border-radius: 1rem;
+
+	overflow: hidden;
+}
+
+.header__control_location_item {
+	padding: 1.2rem 2rem;
+
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: $black_2;
+	cursor: pointer;
+
+	&:hover {
+		background-color: rgba($red, 0.1);
+	}
+}
+
+.header__control_location {
+	@include flex_block(row, wrap, center, center, center);
+
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.header__control_location_icon {
+	display: block;
+
+	width: 2.4rem;
+	height: 2.4rem;
+
+	margin-right: 0.5rem;
+}
+
+.header__control_location_arrow_icon {
+	display: block;
+
+	width: 1.6rem;
+	height: 1.6rem;
+
+	margin-left: 0.5rem;
+}
+
+.header__control_search {
+	position: relative;
+}
+
+.header__search_btn {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	z-index: 1;
+
+	width: 4.8rem;
+	height: 4.8rem;
+
+	padding: 1.1rem;
+
+	transition: background-color ease 0.3s;
+	background-color: $gray_2;
+	border-radius: 50%;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $red;
+	}
+}
+
+.header__control_whatsapp {
+}
+
+.header__control_whatsapp_icon {
+	display: block;
+
+	width: 2.4rem;
+	height: 2.4rem;
+
+	margin-right: 0.7rem;
+}
+
+.header__control_whatsapp_title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: $white;
+}
+
+.header__control_basket {
+	position: relative;
+
+	display: block;
+
+	width: 2.8rem;
+	height: 2.8rem;
+
+	color: $gray_2;
+	transition: color ease 0.3s;
+
+	&:hover {
+		color: darken($gray_2, 10%);
+	}
+}
+
+.header__control_basket_item {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	width: 0.8rem;
+	height: 0.8rem;
+
+	border-radius: 50%;
+	background-color: $red;
+
+	.header__control_basket--active_state & {
+		opacity: 1;
+	}
+}
+
+.header__control_login {
+	position: relative;
+
+	font-size: 1.5rem;
+	color: $gray_3;
+	font-weight: 500;
+	transition: color ease 0.3s;
+
+	&:after {
+		position: absolute;
+		bottom: -0.4rem;
+		left: 0;
+		width: 100%;
+		height: 0;
+		border-bottom: 2px dashed $gray_3;
+		content: '';
+	}
+
+	&:hover {
+		text-decoration: none;
+		color: darken($gray_3, 10%);
+	}
+}
+
+.header__bottom_row {
+	@include flex_block(row, wrap, flex-start, center, center);
+
+	height: 5rem;
+}
+
+.header__catalog_trigger {
+	@include flex_block(row, nowrap, center, center, center);
+
+	height: 100%;
+	padding: 0 3rem 0 2rem;
+
+	background-color: $red;
+	transition: background-color ease 0.3s;
+	cursor: pointer;
+	color: $white;
+
+	&:hover {
+		background-color: darken($red, 15%);
+	}
+}
+
+.header__catalog_icon {
+	width: 1.7rem;
+	height: 1.2rem;
+
+	margin-right: 1.5rem;
+}
+
+.header__catalog_title {
+	font-weight: 700;
+	font-size: 1.5rem;
+}
+
+.header__catalog_list {
+	@include flex_block(row, wrap, space-between, center, center);
+
+	flex-grow: 1;
+}
+
+.header__catalog_link {
+	@include flex_block(row, wrap, center, center, center);
+
+	height: 5rem;
+	padding: 0 1.5rem;
+	font-size: 1.5rem;
+	font-weight: 500;
+	background-color: $black_2;
+	transition: background-color ease 0.3s;
+	color: $white;
+
+	&:hover {
+		background-color: darken($black_2, 10%);
+		text-decoration: none;
+	}
+}

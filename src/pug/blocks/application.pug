@@ -1,0 +1,32 @@
+section.section.application
+	.section_in.application__in
+		.application__row
+			+picture({
+				img: 'application-bg.png',
+				class: 'application__img_w',
+				img_class: 'application__img',
+				alt: 'some image',
+			})
+			.application__col
+				.application__title Заголовок формы заявки
+				.application__form_w
+					form(action="get")
+						.application__form_in
+							.application__form_item
+								+form_input({
+									id: 'application_name',
+									placeholder: 'Имя*',
+									required: true,
+								})
+							.application__form_item
+								+form_input({
+									type: 'tel',
+									id: 'application_name',
+									placeholder: 'Номер телефона*',
+									required: true,
+								})
+							.application__form_btn_w
+								button(type="submit").btn_4.application__btn Отправить заявку
+
+				.application__rights Отправляя заявку вы соглашаетесь на обработку своих персональных данных и принимаете Политику Конфиденциальности
+

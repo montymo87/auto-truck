@@ -1,14 +1,21 @@
 //---------------------------------------------fonts
 $font_path: '../fonts/';
-$font_1: 'RobotoCondensed', sans-serif;
+$font_1: 'Montserrat', sans-serif;
 $font_size_base: 1.6rem;
 //---------------------------------------------fonts###
 
 //---------------------------------------------colors
 $white: #fff;
+$gray: #fafafa;
+$gray_2: #d2d1d1;
+$gray_3: #aeaeae;
 $black: #000;
+$black_2: #1c1c1c;
 
-$color_text_base: $black;
+$red: #f43b3b;
+$gradient: linear-gradient(180deg, #f43b3b 0%, #b7141e 100%);
+
+$color_text_base: $black_2;
 $color_link_base: #4aa3df;
 $body_bg: $white;
 //---------------------------------------------colors###
@@ -22,7 +29,7 @@ $z-index: (
 //---------------------------------------------z-index###
 
 //---------------------------------------------layout
-$page_width: 96rem;
+$page_width: 144rem;
 
 //---------------------------------------------layout###
 
@@ -42,12 +49,12 @@ $point_8: 320px;
 //---------------------------------------------media points
 
 //---------------------------------------------forms
-$input_height: 4rem;
-$input_offset: 0 2rem;
+$input_height: 6rem;
+$input_offset: 0 3rem;
 $input_font_size: $font_size_base;
-$input_border_color: #ccc;
-$input_border_color_active: $black;
-$input_placeholder_color: rgba($black, 0.4);
+$input_border_color: $gray_2;
+$input_border_color_active: $red;
+$input_placeholder_color: $gray_2;
 $input_text_color: $black;
-$input_radius: $gl_radius;
+$input_radius: 3rem;
 //---------------------------------------------forms###

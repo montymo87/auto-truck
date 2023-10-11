@@ -20,26 +20,65 @@
 }
 
 //color mixins:
-@mixin btn_style_blue {
+@mixin btn_style_red {
 	font-weight: 700;
 	color: $white;
-	background-color: $color_link_base;
+	background-color: $red;
 	transition: background-color 0.3s ease;
 
 	@include st_btn;
 
 	&:hover {
-		background-color: darken($color_link_base, 10%);
+		background-color: darken($red, 15%);
+	}
+}
+
+@mixin btn_style_black {
+	font-weight: 700;
+	color: $white;
+	background-color: transparent;
+	border: 1px solid $white;
+	transition: background-color 0.3s ease;
+
+	@include st_btn;
+
+	&:hover {
+		background-color: darken($red, 15%);
+	}
+}
+
+@mixin btn_style_border_red {
+	font-weight: 700;
+	color: $black_2;
+	background-color: $white;
+	border: 1px solid $red;
+	transition: background-color ease 0.3s, color ease 0.3s;
+
+	@include st_btn;
+
+	&:hover {
+		background-color: darken($red, 15%);
+		color: $white;
 	}
 }
 
 //size mixins:
 @mixin btn_size_normal {
-	height: 4rem;
-	padding: 0 1.2rem;
+	height: 5rem;
+	padding: 0 2rem;
 
-	line-height: 4rem;
-	font-size: 1.6rem;
+	line-height: 5rem;
+	font-size: 1.5rem;
 
-	border-radius: $gl_radius;
+	border-radius: 2.5rem;
+}
+
+@mixin btn_size_l {
+	height: 6rem;
+	padding: 0 2rem;
+
+	line-height: 6rem;
+	font-size: 1.5rem;
+
+	border-radius: 3rem;
 }

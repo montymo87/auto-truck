@@ -4,4 +4,13 @@
 
 .form_input__element {
 	@include form_el_default;
+
+	.application__form_item & {
+		background-color: transparent;
+		color: $gray_2;
+	}
+}
+
+.header__search {
+	@include form_el_header;
 }

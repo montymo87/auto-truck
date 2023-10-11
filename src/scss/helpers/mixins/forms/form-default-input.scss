@@ -49,7 +49,6 @@
 	}
 
 	&[type='search'] {
-
 		// HIDE CLEAR ICON
 		&::-ms-clear,
 		&::-ms-reveal {
@@ -66,7 +65,6 @@
 	}
 
 	&[type='date'] {
-
 		// HIDE CALENDAR ICON
 		&::-webkit-calendar-picker-indicator {
 			opacity: 0;
@@ -74,7 +72,81 @@
 	}
 
 	@at-root {
+		// CLEAR DEFAULT SAFARI BG
+		select#{&} {
+			-webkit-tap-highlight-color: transparent;
+		}
+	}
 
+	@include appearance(none);
+}
+
+@mixin form_el_header {
+	display: block;
+	width: 100%;
+	height: 5rem;
+	padding: 0 6rem 0 2.5rem;
+	font-size: 1.6rem;
+	font-family: $font_1;
+	color: $black_2;
+	caret-color: $black_2;
+	box-shadow: inset 0 0 0 1px $gray_2;
+	border: none;
+	background-clip: padding-box;
+	border-radius: 2.5rem;
+
+	transition: box-shadow 0.3s ease 0s;
+	will-change: box-shadow;
+
+	&:hover,
+	&:focus {
+		box-shadow: inset 0 0 0 1px $red;
+	}
+
+	&::-webkit-input-placeholder {
+		color: $input_placeholder_color;
+	}
+
+	&::-moz-placeholder {
+		color: $input_placeholder_color;
+		opacity: 1;
+	}
+
+	&:-ms-input-placeholder {
+		color: $input_placeholder_color;
+	}
+
+	// HIDE USER ICON
+	&::-webkit-contacts-auto-fill-button {
+		visibility: hidden;
+		position: absolute;
+		right: 0;
+	}
+
+	&[type='search'] {
+		// HIDE CLEAR ICON
+		&::-ms-clear,
+		&::-ms-reveal {
+			display: none;
+		}
+
+		// HIDE SAFARI DEFAULT BROWSER DECORATIONS
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+	}
+
+	&[type='date'] {
+		// HIDE CALENDAR ICON
+		&::-webkit-calendar-picker-indicator {
+			opacity: 0;
+		}
+	}
+
+	@at-root {
 		// CLEAR DEFAULT SAFARI BG
 		select#{&} {
 			-webkit-tap-highlight-color: transparent;

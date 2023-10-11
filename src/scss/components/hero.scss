@@ -1,0 +1,100 @@
+.hero {
+	background: linear-gradient(90deg, #252525 0%, #0a0909 100%);
+	color: $white;
+}
+
+.hero__row {
+	@include flex_block(row, wrap, flex-start, center, center);
+}
+
+.hero__col {
+	width: 50%;
+
+	&.hero__col--img_mod {
+		position: relative;
+	}
+}
+
+.hero__title {
+	@include h1;
+
+	font-weight: 600;
+
+	&:not(:last-child) {
+		margin-bottom: 6rem;
+	}
+}
+
+.hero__list_adv {
+	&:not(:last-child) {
+		margin-bottom: 6rem;
+	}
+}
+
+.hero__list_adv_item {
+	@include flex_block(row, wrap, flex-start, center, center);
+
+	position: relative;
+
+	padding-left: 6.5rem;
+
+	&:not(:last-child) {
+		margin-bottom: 3.5rem;
+	}
+}
+
+.hero__list_adv_icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 4rem;
+	height: 4rem;
+}
+
+.hero__list_adv_title {
+	@include text_l;
+
+	font-weight: 400;
+
+	strong {
+		font-weight: 600;
+	}
+}
+
+.hero__list_btn {
+	@include flex_block(row, wrap, flex-start, center, center);
+
+	margin: 0 -2rem -2rem 0;
+}
+
+.hero__list_btn_item {
+	padding: 0 2rem 2rem 0;
+}
+
+.hero__img_w {
+	position: relative;
+	z-index: 1;
+
+	display: block;
+	width: 82rem;
+	height: 82rem;
+
+	margin: -7rem 0 0 min(14rem, 8vw);
+}
+
+.hero__img {
+	@include contain_img;
+}
+
+.hero__img_decor {
+	position: absolute;
+	top: 0;
+	right: -75%;
+
+	width: 81.8rem;
+	height: 81.8rem;
+
+	background: radial-gradient(50% 50% at 50% 50%, #f00 0%, rgba(255, 0, 0, 0) 100%);
+	mix-blend-mode: lighten;
+}

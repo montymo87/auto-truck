@@ -1,0 +1,31 @@
+mixin card(data)
+	.card(class= data.mod)
+		.card__in
+			if data.label
+				.card__label
+					+icon('hit', 'icon--size_mod')
+			a(href="#").card__img_link
+				+picture({
+					img: data.img,
+					class: 'card__img_w',
+					img_class: 'card__img',
+					alt: 'some image',
+				})
+				if data.video
+					span.card__play_btn
+						+icon('play-icon', 'icon--size_mod')
+			.card__info
+				a(href="#").card__title= data.title
+				if data.data
+					.card__data=data.data
+				if data.read
+					a(href="#").card__link
+						span.card__link_title=data.read
+						span.card__link_icon
+							+icon('arrow-right-2', 'icon--size_mod')
+				if data.price
+					.card__info_row
+						.card__price= data.price
+						a(href="#").card__basket
+							+icon('tobasket', 'icon--size_mod')
+

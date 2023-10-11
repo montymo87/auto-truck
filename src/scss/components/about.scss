@@ -1,0 +1,146 @@
+.about {
+	color: $white;
+}
+
+.about__bg_img_w {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+}
+
+.about__bg_img {
+	@include cover_img;
+}
+
+.about__in {
+	position: relative;
+	z-index: 1;
+}
+
+.about__row {
+	@include flex_block(row, wrap, flex-start, center, center);
+
+	padding: 3rem 0;
+}
+
+.about__col {
+	width: 50%;
+
+	&.about__col--info_mod {
+		padding-left: 7rem;
+		padding-right: 4rem;
+		padding-top: 5rem;
+		padding-bottom: 6rem;
+
+		&:after {
+			position: absolute;
+			top: 15%;
+			left: 0;
+			z-index: 1;
+
+			width: 100%;
+			height: 70%;
+			content: '';
+
+			border-radius: 3rem;
+			background: rgba(250, 250, 250, 0.05);
+			box-shadow: 0px 4px 7rem 0px rgba(0, 0, 0, 0.3);
+			backdrop-filter: blur(17.5px);
+		}
+	}
+
+	&.about__col--img_mod {
+		position: relative;
+
+		z-index: 3;
+	}
+}
+
+.about__image_w {
+	position: relative;
+	z-index: 1;
+
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	@include bp(1520px) {
+		font-size: calc(100vw / 1520 * 10);
+	}
+}
+
+.about__col_img_w {
+	display: block;
+
+	width: 83.1em;
+	height: 52.6em;
+}
+
+.about__cover_img_w {
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+
+	width: 62em;
+	height: 38.8em;
+
+	margin: -23.5em 0 0em -25.4em;
+}
+
+.about__col_img,
+.about__cover_img {
+	@include contain_img;
+}
+
+.about__title {
+	@include h2;
+	font-weight: 600;
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+}
+
+.about__list {
+	counter-reset: section;
+}
+
+.about__list_item {
+	@include text_l;
+
+	position: relative;
+	padding-left: 4.5rem;
+
+	&:after {
+		@include flex_block(row, wrap, center, center, center);
+
+		position: absolute;
+		top: -0.3rem;
+		left: 0;
+		z-index: 1;
+
+		width: 3rem;
+		height: 3rem;
+
+		background-color: $red;
+		color: $white;
+		font-size: 1.5rem;
+		font-weight: 700;
+		border-radius: 50%;
+		counter-increment: section;
+		content: counter(section);
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 2.5rem;
+	}
+}
+
+.about__info {
+	position: relative;
+	z-index: 3;
+}

@@ -1,0 +1,32 @@
+include ./m-card
+
+mixin preview(data)
+	section.section.preview(class=data.mod)
+		.section_in.preview__in
+			.preview__heading
+				if data.label
+					.preview__label_w
+						.preview__label
+							.preview__label_icon
+								+icon('hit', 'icon--size_mod')
+							.preview__label_title ХИТЫ ПРОДАЖ
+
+				.preview__title=data.title
+				a(href="#").preview__link
+					span.preview__link_title= data.link_title
+					span.preview__link_icon
+						+icon('arrow-right', 'icon--size_mod')
+
+			.preview__content
+				if data.slider
+					.preview__slider_w.js-preview-slider-w
+						+slider_navigation('preview__slider_nav')
+						.preview__slider.js-preview-slider
+							+loop_while(10)
+								+card(data.card)
+				else
+					.preview__list
+						+loop_while(data.items)
+							.preview__list_item
+								+card(data.card)
+

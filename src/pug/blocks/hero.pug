@@ -1,0 +1,48 @@
+-
+	list = [
+		{
+			icon: 'car',
+			title: '<strong>Более 11 лет</strong> на рынке автомобильной индустрии'
+		},
+		{
+			icon: 'info',
+			title: '<strong>Грамотная консультация</strong> от практикующих специалистов'
+		},
+		{
+			icon: 'tech',
+			title: '<strong>Техническая поддержка</strong> распространяется на все оборудование'
+		},
+	]
+
+section.section.hero
+	.section_in.hero__in
+		.hero__row
+			.hero__col.hero__col--info_mod
+				.hero__info
+					h1.hero__title Оборудование для диагностики и чип-тюнинга автомобилей
+					ul.hero__list_adv
+						each item in list
+							li.hero__list_adv_item
+								.hero__list_adv_icon
+									+icon(item.icon, 'icon--size_mod')
+								.hero__list_adv_title!= item.title
+
+					ul.hero__list_btn
+						li.hero__list_btn_item
+							a(href="#").btn_1
+								span.btn_title Заказать обратный звонок
+
+						li.hero__list_btn_item
+							a(href="#").btn_2
+								span.btn_icon
+									+icon('search', 'icon--size_mod')
+								span.btn_title Найти товар
+
+			.hero__col.hero__col--img_mod
+				.hero__img_decor
+				+picture({
+					img: 'hero.png',
+					class: 'hero__img_w',
+					img_class: 'hero__img',
+					alt: 'some image',
+				})

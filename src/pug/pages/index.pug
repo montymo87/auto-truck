@@ -2,8 +2,53 @@ extends ../layout/layout
 
 block vars
 	//- include ../templates/project-vars
+	include ../templates/mixins/m-preview
 	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
 
 block content_block
-	section.section.index_section.demo_mod
-		h1.section_title Hola #[a.test(href='https://glivera-team.com/') Maketodor] :)
+	include ../blocks/hero
+	include ../blocks/about
+	include ../blocks/go-curse
+	+preview({
+		label: true,
+		title: 'Оборудование для чип-тюнинга',
+		link_title: 'Перейти в каталог',
+		items: 10,
+		slider: true,
+		card: {
+			mod: 'card--hit_mod',
+			label: true,
+			img: 'card.jpg',
+			title: 'Mercedes Star Diagnosis C4 + ноутбук с ПО',
+			price: '59 990 ₽',
+		}
+	})
+	+preview({
+		title: 'Видеообзоры оборудования',
+		link_title: 'Показать все обзоры',
+		items: 4,
+		card: {
+			video: true,
+			mod: 'card--video_mod',
+			img: 'card-video.jpg',
+			title: 'DELPHI DS150E V2023 обзор функционала',
+		}
+	})
+	+preview({
+		mod: 'preview--article_mod',
+		title: 'Lorem ipsum dolor sit amet consectetur',
+		link_title: 'Показать все статьи',
+		items: 3,
+		card: {
+			mod: 'card--article_mod',
+			img: 'card.jpg',
+			title: 'Mercedes Star Diagnosis C4 + ноутбук с ПО',
+			data: '01/01/2023',
+			read: 'ЧИТАТЬ СТАТЬЮ',
+		}
+	})
+
+	include ../blocks/social
+	include ../blocks/application
+	include ../blocks/promotion
+	include ../blocks/advantages

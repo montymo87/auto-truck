@@ -1,3 +1,5 @@
+import previevSlider from 'components/preview-slider';
+
 import layout from 'layout/layout';
 import { pageLoad } from './utils';
 
@@ -32,6 +34,8 @@ export default class App {
 		const initLayout = layout();
 		pageLoad(() => {
 			document.body.classList.add('body--loaded');
+
+			previevSlider();
 		});
 		setTimeout(() => {
 			this.importPage();

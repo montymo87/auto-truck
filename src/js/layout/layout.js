@@ -4,6 +4,7 @@ import { onWindowResize } from 'utils';
 
 // ------------------  import components
 import { calcViewportHeight } from '../utils';
+import header from '../components/header';
 // ------------------  import components###
 
 const layout = () => {
@@ -11,6 +12,7 @@ const layout = () => {
 		calcViewportHeight();
 	});
 	calcViewportHeight();
+	header();
 };
 
 export default layout;

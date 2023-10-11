@@ -1,0 +1,15 @@
+section.section.social
+	.section_in.social__in
+		.social__heading
+			h2.social__title Мы в социальных сетях
+			.social__descr Больше информации вы можете найти у нас ВКонтакте и на YouTube. Прочитать отзывы можно на Авито!
+		ul.social__list
+			each item, index in ['@AutoBoss', '@autoboss123', '@AutoBoss']
+				li.social__list_item
+					a.social__list_item_link(href="#")= item
+					+picture({
+						img: `social/${index}.png`,
+						class: 'social__list_item__img_w',
+						img_class: 'social__list_item__img',
+						alt: 'some image',
+					})

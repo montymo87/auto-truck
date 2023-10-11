@@ -13,7 +13,7 @@ const message = 'Developed by Glivera-team https://glivera-team.com/';
 console.info('%c%s', styles, message);
 // -------------------  dev widget
 if (ENV_STATUS.projectDevStatus || ENV_STATUS.projectPreviewStatus) {
-	pageWidgetInit();
+	// pageWidgetInit();
 }
 // -------------------  dev widget###
 // -------------------  import sprite-icons svg

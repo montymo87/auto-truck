@@ -1,0 +1,38 @@
+-
+	list = [
+		'Обучаем диагностике и чип тюнингу',
+		'Предлагаем лучшее качество, по многим позициям имеем собственное производство',
+		'Большое количество отзывов за годы работы подтверждает наш честный подход к клиенту'
+	]
+
+section.section.about
+	+picture({
+		img: `about_bg.jpg`,
+		class: 'about__bg_img_w',
+		img_class: 'about__bg_img',
+		alt: 'some image',
+	})
+	.section_in.about__in
+		.about__row
+			.about__col.about__col--img_mod
+				a(href="#").about__image_w
+					+picture({
+						img: `laptop.png`,
+						class: 'about__col_img_w',
+						img_class: 'about__col_img',
+						alt: 'some image',
+					})
+					+picture({
+						img: `about_cover.jpg`,
+						class: 'about__cover_img_w',
+						img_class: 'about__cover_img',
+						alt: 'some image',
+					})
+
+			.about__col.about__col--info_mod
+				.about__info
+					h2.about__title О нас:
+					ul.about__list
+						each item in list
+							li.about__list_item= item
+

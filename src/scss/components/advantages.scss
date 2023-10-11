@@ -1,0 +1,67 @@
+.advantages {
+	background-color: $white;
+}
+
+.advantages__list {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 9rem;
+
+	@include bp(1440px, min) {
+		grid-template-columns: repeat(5, 1fr);
+		gap: 9rem;
+	}
+	@include bp(1439px, $point_2) {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 5rem;
+	}
+
+	@include bp($point_3, $point_4) {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 5rem 3rem;
+	}
+
+	@include bp($point_4 - 1, $point_6) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 5rem 2rem;
+	}
+
+	@include bp($point_6 - 1) {
+		grid-template-columns: 1fr;
+		gap: 5rem 2rem;
+	}
+}
+
+.advantages__img_w {
+	display: block;
+	width: 8.5rem;
+	height: 8.8rem;
+
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+}
+
+.advantages__img {
+	@include contain_img;
+}
+
+.advantages__item_in {
+	@include flex_block(column, wrap, center, center, center);
+
+	text-align: center;
+}
+
+.advantages__item_title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: $black;
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+}
+
+.advantages__item_descr {
+	font-size: 1.5rem;
+	font-weight: 500;
+}

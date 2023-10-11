@@ -1,0 +1,58 @@
+-
+	list = [
+		{
+			title: 'Техподдержка',
+			descr: 'Мы всегда бесплатно поможем вам с установкой программы'
+		},
+		{
+			title: 'Гарантия 12 месяцев',
+			descr: 'Каждый адаптер проходит многоступенчатый контроль качества на производстве'
+		},
+		{
+			title: 'Адаптация',
+			descr: 'Программа полностью на русском языке'
+		},
+		{
+			title: 'Универсальность',
+			descr: 'Вы можете установить программу на любой ПК. При условии, что вы являетесь владельцем лицензии'
+		},
+		{
+			title: 'Обучение',
+			descr: 'Доступ к большой базе кодировок, обучающих материалов и справочников по VAG'
+		},
+		{
+			title: 'Обновления',
+			descr: 'Бесплатное обновление ПО онлайн'
+		},
+		{
+			title: 'Доставка',
+			descr: 'Доставка CDEK, DPD, ПЭК'
+		},
+		{
+			title: 'Удобство',
+			descr: 'Удобные пункты самовывоза. Доставка курьером'
+		},
+		{
+			title: 'Безопасность',
+			descr: 'Оплата при получении'
+		},
+		{
+			title: 'Лояльность',
+			descr: 'Акции, скидки и подарки'
+		},
+	]
+
+section.section.advantages
+	.section_in.advantages__in
+		ul.advantages__list
+			each item, index in list
+				li.advantages__list_item
+					.advantages__item_in
+						+picture({
+							img: `advantages/${index}.png`,
+							class: 'advantages__img_w',
+							img_class: 'advantages__img',
+							alt: 'some image',
+						})
+						.advantages__item_title= item.title
+						.advantages__item_descr= item.descr
