@@ -1,9 +1,19 @@
 @mixin h1 {
-	font-size: 4.2rem;
+	@include bp($point_2, min) {
+		font-size: 4.2rem;
+	}
+	@include bp($point_3) {
+		font-size: 3rem;
+	}
 }
 
 @mixin h2 {
-	font-size: 3rem;
+	@include bp($point_2, min) {
+		font-size: 3rem;
+	}
+	@include bp($point_3) {
+		font-size: 2.4rem;
+	}
 }
 
 @mixin h3 {

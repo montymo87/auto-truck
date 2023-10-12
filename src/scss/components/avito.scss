@@ -1,0 +1,113 @@
+.avito {
+	background-color: $gray;
+}
+
+.avito__img_w {
+	display: block;
+	width: 12.4rem;
+	height: 3.2rem;
+
+	@include bp($point_2, min) {
+		margin-bottom: 4rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 2rem;
+	}
+}
+
+.avito__nav_arrow {
+	@include bp($point_2, min) {
+		display: none;
+	}
+	@include bp($point_3) {
+	}
+}
+
+.avito__img {
+	@include contain_img;
+}
+
+.avito__item_row {
+	@include flex_block(row, nowrap, flex-start, center, center);
+
+	&:not(:last-child) {
+		margin-bottom: 1.5rem;
+	}
+}
+
+.avito__slider_w {
+	@include bp($point_3) {
+		margin-right: calc(-1 * var(--gl-indent));
+	}
+}
+
+.avito__nav_arrow {
+	&:nth-child(1) {
+		left: 1rem;
+	}
+	&:nth-child(2) {
+		right: 1rem;
+	}
+}
+
+.avito__slider {
+	@include bp($point_2, min) {
+		column-count: 3;
+		column-gap: 3rem;
+	}
+	@include bp($point_3) {
+	}
+}
+
+.avito__item {
+	background-color: $white;
+	padding: 3rem 4rem;
+
+	@include bp($point_2, min) {
+		margin-bottom: 3rem;
+	}
+}
+
+.avito__item_rating {
+	@include flex_block(row, nowrap, flex-start, center, center);
+}
+
+.avito__item_star {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.avito__item_img_w {
+	width: 2.5rem;
+	height: 2.5rem;
+
+	margin-right: 1rem;
+}
+
+.avito__item_img {
+	@include contain_img;
+}
+
+.avito__item_name {
+	font-size: 1.5rem;
+
+	font-weight: 700;
+}
+
+.avito__item_launch {
+	font-size: 1.1rem;
+	font-weight: 500;
+}
+
+.avito__item_descr {
+	font-size: 1.5rem;
+
+	font-weight: 500;
+}
+
+.avito__item_data {
+	color: $gray_3;
+	font-size: 1.5rem;
+
+	font-weight: 500;
+}

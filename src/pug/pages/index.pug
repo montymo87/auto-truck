@@ -3,6 +3,7 @@ extends ../layout/layout
 block vars
 	//- include ../templates/project-vars
 	include ../templates/mixins/m-preview
+	include ../templates/mixins/m-clip-text
 	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
 
 block content_block
@@ -10,9 +11,11 @@ block content_block
 	include ../blocks/about
 	include ../blocks/go-curse
 	+preview({
-		label: true,
-		title: 'Оборудование для чип-тюнинга',
-		link_title: 'Перейти в каталог',
+		heading: {
+			label: 'ХИТЫ ПРОДАЖ',
+			title: 'Оборудование для чип-тюнинга',
+			link_title: 'Перейти в каталог',
+		},
 		items: 10,
 		slider: true,
 		card: {
@@ -24,8 +27,10 @@ block content_block
 		}
 	})
 	+preview({
-		title: 'Видеообзоры оборудования',
-		link_title: 'Показать все обзоры',
+		heading: {
+			title: 'Видеообзоры оборудования',
+			link_title: 'Показать все обзоры',
+		},
 		items: 4,
 		card: {
 			video: true,
@@ -35,9 +40,11 @@ block content_block
 		}
 	})
 	+preview({
+		heading: {
+			title: 'Lorem ipsum dolor sit amet consectetur',
+			link_title: 'Показать все статьи',
+		},
 		mod: 'preview--article_mod',
-		title: 'Lorem ipsum dolor sit amet consectetur',
-		link_title: 'Показать все статьи',
 		items: 3,
 		card: {
 			mod: 'card--article_mod',
@@ -48,7 +55,32 @@ block content_block
 		}
 	})
 
+	include ../blocks/promotion-slider
+	include ../blocks/advantages
+	include ../blocks/avito
+	+preview({
+		heading: {
+			title: 'Видеоотзывы',
+			link_title: 'Показать все видеоотзывы',
+		},
+		items: 4,
+		card: {
+			video: true,
+			mod: 'card--video_mod',
+			img: 'card-video.jpg',
+			title: 'DELPHI DS150E V2023 обзор функционала',
+		}
+	})
 	include ../blocks/social
 	include ../blocks/application
-	include ../blocks/promotion
-	include ../blocks/advantages
+
+	section.section
+		.section_in
+			+clip_text({
+				content: [
+					'<h1>Lorem ipsum dolor sit amet consectetur</h1>',
+					'<p>Lorem ipsum dolor sit amet consectetur. Purus amet suspendisse odio sed consectetur facilisi id sit accumsan. Amet lectus egestas vestibulum ut. Vestibulum feugiat tristique interdum turpis consequat turpis nisi lorem. Quis amet et egestas felis. Volutpat ac dolor viverra aliquam adipiscing odio semper molestie cras. Cursus commodo consequat non leo. Viverra parturient neque suscipit tellus rhoncus habitant egestas diam. Lacus eros nunc faucibus quam tortor laoreet at natoque dapibus. Faucibus morbi interdum elit ultrices arcu. A tristique tempor ornare semper nulla at imperdiet arcu. Turpis etiam ultricies ut sollicitudin proin cras amet. Euismod adipiscing ut nibh fusce sed elementum. Pretium neque pharetra morbi vitae rhoncus in auctor. Pharetra mi sodales placerat vel orci donec scelerisque tincidunt. Lectus pellentesque donec pulvinar facilisis vulputate leo pharetra. Semper vitae fermentum aliquam curabitur suspendis...</p>',
+					'<p>Lorem ipsum dolor sit amet consectetur. Purus amet suspendisse odio sed consectetur facilisi id sit accumsan. Amet lectus egestas vestibulum ut. Vestibulum feugiat tristique interdum turpis consequat turpis nisi lorem. Quis amet et egestas felis. Volutpat ac dolor viverra aliquam adipiscing odio semper molestie cras. Cursus commodo consequat non leo. Viverra parturient neque suscipit tellus rhoncus habitant egestas diam. Lacus eros nunc faucibus quam tortor laoreet at natoque dapibus. Faucibus morbi interdum elit ultrices arcu. A tristique tempor ornare semper nulla at imperdiet arcu. Turpis etiam ultricies ut sollicitudin proin cras amet. Euismod adipiscing ut nibh fusce sed elementum. Pretium neque pharetra morbi vitae rhoncus in auctor. Pharetra mi sodales placerat vel orci donec scelerisque tincidunt. Lectus pellentesque donec pulvinar facilisis vulputate leo pharetra. Semper vitae fermentum aliquam curabitur suspendis...</p>',
+					'<p>Lorem ipsum dolor sit amet consectetur. Purus amet suspendisse odio sed consectetur facilisi id sit accumsan. Amet lectus egestas vestibulum ut. Vestibulum feugiat tristique interdum turpis consequat turpis nisi lorem. Quis amet et egestas felis. Volutpat ac dolor viverra aliquam adipiscing odio semper molestie cras. Cursus commodo consequat non leo. Viverra parturient neque suscipit tellus rhoncus habitant egestas diam. Lacus eros nunc faucibus quam tortor laoreet at natoque dapibus. Faucibus morbi interdum elit ultrices arcu. A tristique tempor ornare semper nulla at imperdiet arcu. Turpis etiam ultricies ut sollicitudin proin cras amet. Euismod adipiscing ut nibh fusce sed elementum. Pretium neque pharetra morbi vitae rhoncus in auctor. Pharetra mi sodales placerat vel orci donec scelerisque tincidunt. Lectus pellentesque donec pulvinar facilisis vulputate leo pharetra. Semper vitae fermentum aliquam curabitur suspendis...</p>',
+				]
+			})

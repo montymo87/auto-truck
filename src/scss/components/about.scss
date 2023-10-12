@@ -21,41 +21,74 @@
 }
 
 .about__row {
-	@include flex_block(row, wrap, flex-start, center, center);
-
 	padding: 3rem 0;
+
+	@include bp($point_1, min) {
+		@include flex_block(row, wrap, flex-start, center, center);
+	}
+	@include bp($point_1 - 1) {
+		@include flex_block(column, wrap, flex-start, center, center);
+	}
 }
 
 .about__col {
-	width: 50%;
+	@include bp($point_2, min) {
+		width: 50%;
+	}
+	@include bp($point_3) {
+		width: 100%;
+	}
 
 	&.about__col--info_mod {
-		padding-left: 7rem;
-		padding-right: 4rem;
-		padding-top: 5rem;
-		padding-bottom: 6rem;
+		@include bp($point_1, min) {
+			padding: 5rem 4rem 6rem 7rem;
+		}
+		@include bp($point_1 - 1) {
+			position: relative;
+			padding: 4rem 3rem 4rem;
+		}
+
+		@include bp($point_1, $point_2) {
+			width: 80%;
+		}
 
 		&:after {
 			position: absolute;
-			top: 15%;
+
 			left: 0;
 			z-index: 1;
 
 			width: 100%;
-			height: 70%;
+
 			content: '';
 
 			border-radius: 3rem;
 			background: rgba(250, 250, 250, 0.05);
 			box-shadow: 0px 4px 7rem 0px rgba(0, 0, 0, 0.3);
 			backdrop-filter: blur(17.5px);
+
+			@include bp($point_1, min) {
+				top: 15%;
+				height: 70%;
+			}
+			@include bp($point_1 - 1) {
+				top: 0%;
+				height: 100%;
+			}
 		}
 	}
 
 	&.about__col--img_mod {
 		position: relative;
-
 		z-index: 3;
+
+		@include bp($point_1, $point_2) {
+			margin-right: 11rem;
+		}
+
+		@include bp($point_1 - 1) {
+			margin-bottom: 3rem;
+		}
 	}
 }
 
@@ -70,6 +103,16 @@
 	@include bp(1520px) {
 		font-size: calc(100vw / 1520 * 10);
 	}
+
+	@include bp($point_4) {
+		font-size: calc(100vw / 1520 * 15);
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+	}
 }
 
 .about__col_img_w {
@@ -77,6 +120,10 @@
 
 	width: 83.1em;
 	height: 52.6em;
+
+	@include bp($point_3) {
+		margin: 0 auto;
+	}
 }
 
 .about__cover_img_w {
@@ -85,10 +132,17 @@
 	top: 50%;
 	left: 50%;
 
-	width: 62em;
-	height: 38.8em;
+	@include bp($point_2, min) {
+		width: 62em;
+		height: 38.8em;
 
-	margin: -23.5em 0 0em -25.4em;
+		margin: -23.5em 0 0em -25.4em;
+	}
+	@include bp($point_3) {
+		width: 62em;
+		height: 38.8em;
+		margin: -23.5em 0 0em -31.1em;
+	}
 }
 
 .about__col_img,

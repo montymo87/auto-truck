@@ -5,11 +5,6 @@
 	top: 50%;
 	z-index: 10;
 
-	width: 6rem;
-	height: 6rem;
-	// margin-top: -4rem;
-	padding: 1.7rem;
-
 	color: $white;
 	background-color: $red;
 	border-radius: 50%;
@@ -24,12 +19,34 @@
 		pointer-events: none;
 	}
 
+	@include bp($point_2, min) {
+		padding: 1.7rem;
+		width: 6rem;
+		height: 6rem;
+	}
+	@include bp($point_3) {
+		padding: 1rem;
+		width: 4rem;
+		height: 4rem;
+	}
+
 	&.slider_navigation--next_mod {
-		right: -3rem;
+		@include bp($point_2, min) {
+			right: -3rem;
+		}
+		@include bp($point_3) {
+			right: -1rem;
+		}
 	}
 	&.slider_navigation--prev_mod {
-		left: -3rem;
 		transform: rotate(180deg);
+
+		@include bp($point_2, min) {
+			left: -3rem;
+		}
+		@include bp($point_3) {
+			left: -1rem;
+		}
 	}
 
 	@media (hover: hover) {

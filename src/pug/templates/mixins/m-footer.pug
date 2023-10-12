@@ -1,2 +1,110 @@
+-
+	lists = [
+		{
+			title: 'Контакты',
+			list: [
+				{
+					title: 'launch-russia@yandex.ru',
+				},
+				{
+					title: '+7 (989) 261-39-83',
+				},
+				{
+					title: 'WhatsApp',
+				},
+			]
+		},
+		{
+			title: 'Меню',
+			list: [
+				{
+					title: 'Обучающие курсы',
+				},
+				{
+					title: 'Видеообзоры',
+				},
+				{
+					title: 'Гарантии',
+				},
+				{
+					title: 'Акции',
+				},
+				{
+					title: 'Статьи',
+				},
+				{
+					title: 'Поиск по товарам',
+				},
+				{
+					title: 'Контакты',
+				},
+			]
+		},
+		{
+			title: 'Каталог товаров',
+			list: [
+				{
+					title: 'Диагностические сканеры',
+				},
+				{
+					title: 'Оборудование для чип-тюнинга',
+				},
+				{
+					title: 'Все для автоключей',
+				},
+				{
+					title: 'Толщинометры',
+				},
+				{
+					title: 'Эндоскопы',
+				},
+				{
+					title: 'Оборудование для корректировки одометров',
+				},
+				{
+					title: 'Очистка форсунок',
+				},
+				{
+					title: 'Обучающие видеокурсы',
+				},
+			]
+		},
+	]
+
+
 mixin footer
 	footer.footer
+		.footer__in
+			.footer__row
+				.footer__col
+					a(href="#").footer__logo_w
+						img(src="images/logo-white.png", alt="some logo")
+					.footer__rights
+						a(href="#").footer__arkada
+							img(src="images/arkada.png", alt="some logo")
+						.footer__reserved © 2023 Все права защищены
+						a(href="#").footer__policy
+							span.footer__policy_title Политика конфиденциальности
+							span.footer__policy_icon
+								+icon('policy-arrow', 'icon--size_mod')
+
+				each col in lists
+					.footer__col
+						h3.footer__title= col.title
+						ul.footer__list
+							each item in col.list
+								li.footer__item
+									a.footer__item_link(href="#")
+										if item.icon
+											span.footer__item_icon
+												+icon(item.icon, 'icon--size_mod')
+										span.footer__item_title= item.title
+
+				//- .footer__col.footer__col--mobile
+				//- 	.footer__rights
+				//- 		a(href="#").footer__arkada
+				//- 			img(src="images/arkada.png", alt="some logo")
+				//- 		.footer__reserved © 2023 Все права защищены
+				//- 		a(href="#").footer__policy Политика конфиденциальности
+				//- 			span.footer__policy_icon
+				//- 				+icon('policy-arrow', 'icon--size_mod')

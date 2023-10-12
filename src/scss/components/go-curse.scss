@@ -18,7 +18,19 @@
 }
 
 .go_curse__col {
-	width: 50%;
+	&.go_curse__col--img_mod {
+		@include bp($point_4 - 1) {
+			display: none;
+		}
+	}
+
+	@include bp($point_4, min) {
+		width: 50%;
+	}
+
+	@include bp($point_4 - 1) {
+		width: 100%;
+	}
 }
 
 .go_curse__info {
@@ -54,10 +66,25 @@
 
 .go_curse__img_w {
 	display: block;
-	width: 100%;
-	height: 100%;
 
 	margin-bottom: calc(-1 * var(--gl-vr-indent));
+
+	@include bp($point_2, min) {
+		width: 100%;
+		height: 100%;
+	}
+	@include bp($point_3, $point_4) {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+
+		width: 40vw;
+		height: 34vw;
+	}
+
+	@include bp($point_4 - 1) {
+		display: none;
+	}
 }
 
 .go_curse__img {

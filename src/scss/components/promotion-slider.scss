@@ -1,0 +1,157 @@
+.promotion_slider {
+	color: $white;
+	padding-bottom: 0;
+
+	@include bp($point_2, min) {
+		padding-top: 0;
+	}
+
+	@include bp($point_3) {
+		background-color: $black_3;
+		padding-top: 6rem;
+	}
+}
+
+.promotion_slider__row {
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-start, stretch, stretch);
+	}
+}
+
+.promotion_slider__col {
+	&.promotion_slider__col--thumb_mod {
+		position: relative;
+		z-index: 10;
+
+		@include bp($point_2, min) {
+			width: 40%;
+			padding: 4rem 5rem 4rem 0;
+		}
+		@include bp($point_3) {
+			width: 100%;
+			margin-bottom: 5rem;
+		}
+	}
+
+	&.promotion_slider__col--slider_mod {
+		position: relative;
+
+		&:after {
+			position: absolute;
+			top: 0;
+			z-index: 1;
+
+			display: block;
+			width: 100vw;
+			height: 100%;
+			content: '';
+			background-color: $black_3;
+			border-bottom-right-radius: 10rem;
+			transform: skewX(-15deg);
+
+			@include bp(1440px, min) {
+				right: 90%;
+			}
+			@include bp(1440px - 1) {
+				right: 85%;
+			}
+
+			@include bp($point_3) {
+				display: none;
+			}
+		}
+
+		@include bp($point_2, min) {
+			width: 60%;
+		}
+		@include bp($point_3) {
+			width: 100%;
+			padding: 0 2rem;
+		}
+	}
+}
+.promotion_slider__thumb_w {
+	height: 100%;
+}
+
+.promotion_slider__thumb_slider {
+	height: 100%;
+}
+
+.promotion_slider__thumb_slide_in {
+	width: 100%;
+	height: 100%;
+
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-start, center, center);
+
+		max-width: 45rem;
+	}
+	@include bp($point_3) {
+		@include flex_block(row, wrap, center, center, center);
+	}
+}
+
+.promotion_slider__title {
+	@include h2;
+	font-weight: 600;
+	color: inherit;
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+}
+
+.promotion_slider__descr {
+	font-size: 1.5rem;
+	font-weight: 500;
+	color: inherit;
+
+	p {
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+
+		@include bp($point_3) {
+			text-align: center;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 5rem;
+	}
+}
+
+.promotion_slider__img_w {
+	display: block;
+	width: 100%;
+	height: 45rem;
+
+	@include bp($point_2, min) {
+		transform: skewX(-15deg);
+	}
+}
+
+.promotion_slider__img {
+	@include cover_img;
+}
+
+.promotion_slider_w {
+	.promotion_slider__slide {
+		transition: filter ease 0.4s;
+	}
+
+	.swiper-slide-next {
+		filter: grayscale(90%);
+	}
+
+	.slider_navigation--prev_mod {
+		@include bp($point_2, min) {
+			left: 10rem;
+		}
+	}
+
+	@include bp($point_2, min) {
+		background-color: $white;
+	}
+}

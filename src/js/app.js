@@ -1,4 +1,7 @@
 import previevSlider from 'components/preview-slider';
+import mobileSlider from 'components/mobile-slider';
+import promotionSlider from 'components/promotion-slider';
+import clipText from 'components/clip-text';
 
 import layout from 'layout/layout';
 import { pageLoad } from './utils';
@@ -35,7 +38,10 @@ export default class App {
 		pageLoad(() => {
 			document.body.classList.add('body--loaded');
 
+			mobileSlider(1024);
 			previevSlider();
+			promotionSlider();
+			clipText();
 		});
 		setTimeout(() => {
 			this.importPage();

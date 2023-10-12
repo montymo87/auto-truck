@@ -1,0 +1,10 @@
+mixin clip_text(data)
+	.read_more(class= data.mod).js-clip-wrapper.read_more--active_state
+		.read_more__content.js-clip-text
+			each item in data.content
+				!= item
+
+		button.read_more__btn(type="button").js-clip-trigger
+			span.read_more__title Развернуть
+			span.read_more__icon
+				+icon('arrow-down', 'icon--size_mod')

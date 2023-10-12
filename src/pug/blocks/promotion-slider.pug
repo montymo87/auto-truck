@@ -1,2 +1,27 @@
 section.section.promotion_slider
 	.section_in.promotion_slider__in
+		.promotion_slider__row
+			.promotion_slider__col.promotion_slider__col--thumb_mod
+				.promotion_slider__thumb_w.js-product-thumb-w
+					.promotion_slider__thumb_slider.js-product-thumb
+						+loop_while(4)
+							.promotion_slider__thumb_slide
+								.promotion_slider__thumb_slide_in
+									h2.promotion_slider__title= `Заголовок акции ${i}`
+									.promotion_slider__descr
+										p Lorem ipsum dolor sit amet consectetur. Donec quisque in et tincidunt volutpat eleifend. Sed in risus vulputate sit accumsan accumsan id risus hac. Massa a ultricies vulputate auctor cras. Sem eget pellentesque molestie lobortis at porttitor tellus.
+									.promotion_slider__btn_w
+										a(href="#").promotion_slider__btn.btn_2 Подробнее
+
+			.promotion_slider__col.promotion_slider__col--slider_mod
+				.promotion_slider_w.js-product-slider-w
+					+slider_navigation
+					.promotion_slider__slider(style="overflow: visible").js-product-slider
+						+loop_while(4)
+							.promotion_slider__slide
+								+picture({
+									img: `promotion-slider/${i}.jpg`,
+									class: 'promotion_slider__img_w',
+									img_class: 'promotion_slider__img',
+									alt: 'some image',
+								})

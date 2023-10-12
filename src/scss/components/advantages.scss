@@ -1,5 +1,9 @@
 .advantages {
 	background-color: $white;
+
+	@include bp($point_3) {
+		padding-top: 6rem;
+	}
 }
 
 .advantages__list {
