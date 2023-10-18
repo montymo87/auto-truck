@@ -1,9 +1,17 @@
 @mixin form_el_label {
 	display: block;
-	margin-bottom: 0.4rem;
 
-	font-size: 1.6rem;
+	font-weight: 600;
 	color: $black;
+
+	@include bp($point_2, min) {
+		margin-bottom: 2rem;
+		font-size: 2.1rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 1rem;
+		font-size: 1.8rem;
+	}
 }
 
 @mixin form_el_default {
@@ -22,6 +30,10 @@
 
 	transition: box-shadow 0.3s ease 0s;
 	will-change: box-shadow;
+
+	.cabinet & {
+		background-color: $gray;
+	}
 
 	&:hover,
 	&:focus {

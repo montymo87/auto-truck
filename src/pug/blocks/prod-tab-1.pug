@@ -1,0 +1,87 @@
+-
+	list = [
+		{
+			title: 'Доставка за 1 день',
+			icon: 'clock'
+		},
+		{
+			title: 'Оффлайн обучение',
+			icon: 'book'
+		},
+		{
+			title: 'Наложенный платеж',
+			icon: 'cash'
+		},
+		{
+			title: 'Техническая консультация',
+			icon: 'chat'
+		},
+		{
+			title: 'Тест-драйв перед покупкой',
+			icon: 'bolt'
+		},
+	]
+
+.prod_tab_1
+	.prod_tab_1__title LAUNCH X431 PADVII LINK МНОГОФУНКЦИОНАЛЬНЫЙ ДИАГНОСТИЧЕСКИЙ СКАНЕР
+	.prod_tab_1__row
+		.prod_tab_1__col.prod_tab_1__col--slider_mod
+
+				.prod_tab_1__slider_thumb_w.js-product-thumb-w
+					.prod_tab_1__slider_thumb.js-product-thumb
+						each item in [1,2,3,4,5,6,7,8]
+							.prod_tab_1__slide_thumb
+								.prod_tab_1__slide_thumb_img
+									img(src=`images/promotion-slider/4.jpg`, alt="")
+
+
+				.prod_tab_1__slider_w.js-product-slider-w
+					+slider_navigation
+					.prod_tab_1__slider.js-product-slider
+						each item in [1,2,3,4,5,6,7,8]
+							.prod_tab_1__slide
+								.prod_tab_1__slide_img.swiper-zoom-container
+									img(src=`images/promotion-slider/4.jpg`, alt="")
+
+		.prod_tab_1__col.prod_tab_1__col--info_mod
+			.prod_tab_1__info
+				.prod_tab_1__price
+					.prod_tab_1__price_sale 400 000 ₽
+					.prod_tab_1__price_row
+						.prod_tab_1__price_title Цена:
+						.prod_tab_1__price_cost 300 000 ₽
+
+				ul.prod_tab_1__about_list
+					each item in list
+						li.prod_tab_1__about_item= item.title
+							.prod_tab_1__about_icon
+								+icon( item.icon, 'icon--size_mod')
+
+				ul.prod_tab_1__list_btn
+					li.prod_tab_1__list_btn_item
+						a(href="#").btn_1
+							span.btn_title Добавить в корзину
+							span.btn_icon
+								+icon('tobasket', 'icon--size_mod')
+
+					li.prod_tab_1__list_btn_item
+						a(href="#").btn_2
+							span.btn_title Купить в один клик
+							span.btn_icon
+								+icon('icon-click', 'icon--size_mod')
+
+	.prod_tab_1__article_w
+		.article_content
+			p Сканер Launch X-431 PADVII Link - это обновления версия флагмана среди диагностических сканеров от компании Launch. Его можно охарактеризовать фразой - “Достаточно одного”. Так как сканер воплотил в себе самые передовые технологии Launch и в паре с мощнейшим железом позволит вам быть актуальным специалистом на годы вперёд. С его помощью вы сможете проводить не только стандартную диагностику авто, а также онлайн программирование, кодирование, ведомую диагностику и многое другое.
+			p В данной версии сканера обновилась комплектация. В комплект входит VCI адаптер Smartlink C, который поддерживает помимо стандартных функций, еще и диагностику по протоколу J2534 и RP1210/D-PDU. Комплект OBD-I адаптеров приобретается отдельно. Карта покрытия охватывает более 90 марок автомобилей и более 30 сервисных функций.
+
+	.prod_tab_1__info_row
+		.prod_tab_1__info_col
+			a(href="#").prod_tab_1__info_link
+				.prod_tab_1__info_img
+					img(src="images/video-cover.jpg", alt="")
+
+		.prod_tab_1__info_col
+			a(href="#").prod_tab_1__info_link
+				.prod_tab_1__info_img
+					img(src="images/video-cover.jpg", alt="")

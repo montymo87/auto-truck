@@ -1,0 +1,272 @@
+.prod_tab_1__title {
+	@include h2;
+	font-weight: 400;
+	color: $black_3;
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 8rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 4rem;
+		}
+	}
+}
+
+.prod_tab_1__row {
+	@include bp($point_4, min) {
+		@include flex_block(row, nowrap, flex-start);
+	}
+	@include bp($point_4 - 1) {
+	}
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 8rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 4rem;
+		}
+	}
+}
+
+.prod_tab_1__col {
+	&.prod_tab_1__col--slider_mod {
+		@include flex_block(row, wrap, flex-start);
+
+		@include bp($point_4, min) {
+			width: 60%;
+		}
+
+		@include bp($point_4) {
+			margin-bottom: 4rem;
+			width: 100%;
+		}
+	}
+
+	&.prod_tab_1__col--info_mod {
+		@include bp($point_4, min) {
+			padding-left: 4vw;
+			width: 40%;
+		}
+
+		@include bp($point_4) {
+			width: 100%;
+		}
+	}
+}
+
+.prod_tab_1__slider_thumb {
+	@include bp(1300px, min) {
+		height: 53rem;
+	}
+	@include bp(1300px - 1) {
+		height: 39.2vw;
+	}
+
+	@include bp($point_4 - 1) {
+		height: 8rem;
+	}
+}
+
+.prod_tab_1__slide_thumb_img {
+	width: 100%;
+	height: 100%;
+
+	img {
+		@include cover_img;
+	}
+
+	.swiper-slide-thumb-active & {
+		border: 2px solid $red;
+	}
+}
+
+.prod_tab_1__slide_img {
+	width: 100%;
+	height: 100%;
+	background-color: #d9d9d9;
+
+	img {
+		@include contain_img;
+	}
+}
+
+.prod_tab_1__slider_w {
+	position: relative;
+
+	@include bp($point_1, min) {
+		width: calc(100% - 12.3rem);
+	}
+	@include bp($point_1 - 1) {
+		width: calc(100% - 7.3rem);
+	}
+
+	@include bp($point_4) {
+		width: 100%;
+		margin-bottom: 1rem;
+		order: -1;
+	}
+}
+
+.prod_tab_1__slider {
+	@include bp(1300px, min) {
+		height: 53rem;
+	}
+	@include bp(1300px - 1) {
+		height: 39.2vw;
+	}
+
+	@include bp($point_4) {
+		height: 60vw;
+	}
+}
+
+.prod_tab_1__slider_thumb_w {
+	@include bp($point_1, min) {
+		width: 9.3rem;
+		margin-right: 3rem;
+	}
+	@include bp($point_1 - 1) {
+		width: 6rem;
+		margin-right: 1rem;
+	}
+
+	@include bp($point_4 - 1) {
+		width: 100%;
+	}
+}
+
+.prod_tab_1__price {
+	border-bottom: 1px solid $red;
+
+	@include bp($point_1, min) {
+		padding-bottom: 3rem;
+		margin-bottom: 3.8rem;
+	}
+	@include bp($point_1 - 1) {
+		padding-bottom: 1.5rem;
+		margin-bottom: 2rem;
+	}
+}
+
+.prod_tab_1__price_row {
+	@include flex_block(row, wrap, flex-start, center, center);
+}
+
+.prod_tab_1__price_sale {
+	@include text_l;
+
+	width: 100%;
+	text-align: right;
+	color: $red;
+	font-weight: 600;
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+
+.prod_tab_1__price_title {
+	@include text_l;
+
+	padding-right: 1rem;
+	margin-right: auto;
+	color: $black_3;
+	font-weight: 600;
+}
+
+.prod_tab_1__price_cost {
+	@include h2;
+	font-weight: 600;
+	color: $black_3;
+}
+
+.prod_tab_1__about_list {
+	&:not(:last-child) {
+		@include bp($point_1, min) {
+			margin-bottom: 4.8rem;
+		}
+		@include bp($point_1 - 1) {
+			margin-bottom: 2.8rem;
+		}
+	}
+}
+
+.prod_tab_1__about_item {
+	@include text_s;
+
+	position: relative;
+
+	padding-left: 3.6rem;
+	font-weight: 500;
+
+	&:not(:last-child) {
+		@include bp($point_1, min) {
+			margin-bottom: 3rem;
+		}
+		@include bp($point_1 - 1) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.prod_tab_1__about_icon {
+	position: absolute;
+	top: -0.4rem;
+	left: 0;
+
+	width: 2.6rem;
+	height: 2.6rem;
+}
+
+.prod_tab_1__list_btn {
+	@include flex_block(row, wrap, flex-start);
+
+	margin: 0 -2rem -2rem 0;
+}
+
+.prod_tab_1__list_btn_item {
+	padding: 0 2rem 2rem 0;
+}
+
+.prod_tab_1__article_w {
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 8rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 4rem;
+		}
+	}
+}
+
+.prod_tab_1__info_row {
+	display: grid;
+
+	gap: 3rem;
+
+	@include bp($point_4, min) {
+		grid-template-columns: 1fr 1fr;
+	}
+	@include bp($point_4 - 1) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.prod_tab_1__info_img {
+	position: relative;
+
+	width: 100%;
+
+	padding-bottom: 71%;
+	background-color: #d9d9d9;
+
+	img {
+		@include contain_img;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}

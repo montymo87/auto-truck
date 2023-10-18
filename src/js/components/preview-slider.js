@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 import { Navigation, FreeMode } from 'swiper/modules';
-import 'swiper/css';
+// import 'swiper/css';
 import { buildSwiper, removeSwiper } from './build-swiper';
 
 const CLASS_NAMES = {

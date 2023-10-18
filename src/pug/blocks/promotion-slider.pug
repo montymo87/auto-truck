@@ -2,8 +2,8 @@ section.section.promotion_slider
 	.section_in.promotion_slider__in
 		.promotion_slider__row
 			.promotion_slider__col.promotion_slider__col--thumb_mod
-				.promotion_slider__thumb_w.js-product-thumb-w
-					.promotion_slider__thumb_slider.js-product-thumb
+				.promotion_slider__thumb_w.js-promotion-thumb-w
+					.promotion_slider__thumb_slider.js-promotion-thumb
 						+loop_while(4)
 							.promotion_slider__thumb_slide
 								.promotion_slider__thumb_slide_in
@@ -14,9 +14,9 @@ section.section.promotion_slider
 										a(href="#").promotion_slider__btn.btn_2 Подробнее
 
 			.promotion_slider__col.promotion_slider__col--slider_mod
-				.promotion_slider_w.js-product-slider-w
+				.promotion_slider_w.js-promotion-slider-w
 					+slider_navigation
-					.promotion_slider__slider(style="overflow: visible").js-product-slider
+					.promotion_slider__slider(style="overflow: visible").js-promotion-slider
 						+loop_while(4)
 							.promotion_slider__slide
 								+picture({

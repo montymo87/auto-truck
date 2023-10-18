@@ -1,0 +1,92 @@
+include ../templates/mixins/m-card-2
+include ../templates/mixins/m-heading
+
+-
+	list = [
+		{
+			title: 'Автосканеры LAUNCH',
+			img: 'card-2.png',
+			mod: 'card_2--active_state'
+		},
+		{
+			title: 'Переходники на нестандартные размеры',
+			img: 'card-2.png',
+		},
+		{
+			title: 'Марочные диагностические адаптеры',
+			img: 'card-2.png',
+		},
+		{
+			title: 'Дилерские автосканеры',
+			img: 'card-2.png',
+		},
+		{
+			title: 'Мультимарочные автосканеры (грузовые)',
+			img: 'card-2.png',
+		},
+		{
+			title: 'Мультимарочные автосканеры (легковые)',
+			img: 'card-2.png',
+		},
+		{
+			title: 'Мотор-тестеры, осциллографы',
+			img: 'card-2.png',
+		},
+		{
+			title: 'Готовые диагностические комплекты',
+			img: 'card-2.png',
+		},
+		{
+			title: 'Жесткие диски с софтом',
+			img: 'card-2.png',
+		},
+		{
+			title: 'Диагностическое ПО и обновления',
+			img: 'card-2.png',
+		}
+	]
+
+	list_2 = [
+		{
+			title: 'Диагностические сканеры',
+			img: 'card-catalog.png',
+			mod: 'card_2--active_state'
+		},
+		{
+			title: 'Оборудование для чип-тюнинга',
+			img: 'card-catalog.png',
+		},
+		{
+			title: 'Все для автоключей',
+			img: 'card-catalog.png',
+		},
+		{
+			title: 'Толщинометры',
+			img: 'card-catalog.png',
+		},
+		{
+			title: 'Эндоскопы',
+			img: 'card-catalog.png',
+		},
+		{
+			title: 'Оборудование для корректировки одометров',
+			img: 'card-catalog.png',
+		},
+		{
+			title: 'Очистка форсунок',
+			img: 'card-catalog.png',
+		},
+	]
+
+section.section.scaner_list(class=mod)
+	.section_in.scaner_list__in
+		+heading({
+			title: !mod ? 'Видеообзоры оборудования' : 'Каталог товаров',
+			link_title: !mod ? 'Показать все обзоры' : false,
+		})
+
+		ul.scaner_list__list
+			each item in mod ? list_2 : list
+				li.scaner_list__item
+					.scaner_list__item_in
+						+card_2(item)

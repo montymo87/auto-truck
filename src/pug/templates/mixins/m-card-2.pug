@@ -1,0 +1,9 @@
+mixin card_2(data)
+	a(href="#" class=data.mod).card_2
+		h2.card_2__title=data.title
+		+picture({
+			img: `${data.img}`,
+			class: 'card_2__img_w',
+			img_class: 'card_2__img',
+			alt: 'some image',
+		})

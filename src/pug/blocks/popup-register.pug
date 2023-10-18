@@ -1,0 +1,27 @@
+.popup(class=`js-popup-reg` data-popup-id='registration')
+	.popup__in
+		.popup__content
+			button.popup_close.js-popup-close(type="button" aria-label="Close Popup" tabindex="0")
+			.popup__content_in
+				h2.popup__content_title Регистрация
+				.popup__content_form_w
+					form(action="", method="post")
+						.popup__content_form
+							.popup__content_form_input_list
+								.popup__content_form_item
+									+form_input({
+										placeholder: 'Электронная почта',
+										type: 'mail',
+										id: 'login_mail'
+									})
+								.popup__content_form_item
+									+form_input({
+										placeholder: 'Пароль',
+										type: 'password',
+										class: 'form_input__element',
+										id: 'login_pas'
+									})
+
+							.popup__content_form_btn_w
+								button(type="submit").btn_6.popup__content_form_btn Зарегистрироваться
+

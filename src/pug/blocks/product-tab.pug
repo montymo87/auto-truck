@@ -1,0 +1,33 @@
+-
+	nav = [
+		{
+			title: 'Описание'
+		},
+		{
+			title: 'Файлы для скачивания'
+		},
+		{
+			title: 'Комплект с этим товаром'
+		},
+	]
+
+section.section.product_tab.js-product-tab
+	.section_in.product_tab__in
+		.product_tab__nav
+			ul.product_tab__nav_list
+				each item, index in nav
+					li.product_tab__nav_item
+						a.product_tab__tabs_button.js-product-tab-trigger(href="#" data-tab=index class=`${index == 0 ? 'active_state' : ''}`)= item.title
+
+		.product_tab__list_w
+			.product_tab__content_wrap
+				+loop_while(3)
+					if i - 1 == 0
+						.product_tab__tabs_content.js-product-tab-content(class='active_state', data-tab= i - 1)
+							include ./prod-tab-1
+					if i - 1 == 1
+						.product_tab__tabs_content.js-product-tab-content(data-tab= i - 1)
+							include ./prod-tab-2
+					if i - 1 == 2
+						.product_tab__tabs_content.js-product-tab-content(data-tab= i - 1)
+							include ./prod-tab-3

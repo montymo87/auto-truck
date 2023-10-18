@@ -1,0 +1,150 @@
+.filter {
+	padding-top: 2.5rem;
+}
+
+.filter__row_w {
+	margin-bottom: 2.5rem;
+}
+
+.filter__row {
+	@include flex_block(row, wrap, flex-start, center, center);
+
+	margin: 0 -3rem -1.4rem 0;
+}
+
+.filter__sort {
+	font-size: 1.5rem;
+	font-weight: 500;
+	color: $black_3;
+	padding: 0 3rem 1.4rem 0;
+}
+
+.filter__filter_w {
+	@include flex_block(row, wrap, flex-start, center, center);
+	flex-grow: 1;
+}
+
+.filter__for {
+	@include flex_block(row, wrap, flex-start, center, center);
+	padding: 0 3rem 1.4rem 0;
+	font-size: 1.5rem;
+	font-weight: 500;
+	color: $gray_3;
+
+	&.filter__for--active_state_mod {
+		color: $black_3;
+	}
+
+	&.filter__for--alphabet_mod {
+		.filter__for_icon {
+			width: 2.6rem;
+		}
+	}
+
+	&.filter__for--range_mod {
+		margin-left: auto;
+	}
+}
+
+.filter__for_icon {
+	display: block;
+	width: 1.8rem;
+	height: 1.8rem;
+	margin-right: 1rem;
+}
+
+.filter__for_input_w {
+	@include flex_block(row, nowrap, flex-start, center, center);
+}
+
+.filter__for_range_title {
+	font-size: 1.5rem;
+	font-weight: 500;
+	color: $black_3;
+	margin-right: 2rem;
+}
+
+.filter__for_range_input_w {
+	width: 9rem;
+	border-radius: 1.6rem;
+	border: 1px solid $gray_2;
+
+	overflow: hidden;
+}
+
+.filter__for_range_text {
+	width: 100%;
+	appearance: none;
+	border: none;
+	font-size: 1.5rem;
+	font-weight: 500;
+	color: $gray_3;
+	text-align: center;
+	padding: 1rem;
+}
+
+.filter__for_range_slder_w {
+	padding: 0 2rem;
+	width: 25rem;
+}
+
+.filter__for_range_slider {
+	width: 100%;
+}
+
+.filter__list_content {
+	position: relative;
+
+	&:after {
+		position: absolute;
+		top: 0;
+		left: -50%;
+		display: block;
+		width: 200vw;
+		height: 1px;
+		box-shadow: 0 1rem 1.5rem 0 rgba(0, 0, 0, 0.4);
+		content: '';
+	}
+}
+
+.filter__list_w {
+	padding: 6rem 0;
+}
+
+.filter__list {
+	@include flex_block(row, wrap, flex-start, center, center);
+
+	// width: 100%;
+
+	@include bp($point_2, min) {
+		margin: 0 -3rem -6rem 0;
+	}
+	@include bp($point_3, $point_4) {
+		margin: 0 -2rem -4rem 0;
+	}
+	@include bp($point_4 - 1, $point_6) {
+		margin: 0 -2rem -4rem 0;
+	}
+	@include bp($point_6 - 1) {
+		margin: 0 -2rem -4rem 0;
+	}
+}
+
+.filter__list_item {
+	@include bp($point_2, min) {
+		width: 25%;
+		padding: 0 3rem 6rem 0;
+	}
+	@include bp($point_3, $point_4) {
+		width: calc(100% / 3);
+		padding: 0 2rem 4rem 0;
+	}
+	@include bp($point_4 - 1, $point_6) {
+		width: calc(100% / 2);
+		padding: 0 2rem 4rem 0;
+	}
+	@include bp($point_6 - 1) {
+		width: 100%;
+		padding: 0 2rem 4rem 0;
+	}
+}

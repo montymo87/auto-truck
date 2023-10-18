@@ -7,7 +7,8 @@ mixin heading(data)
 						+icon('hit', 'icon--size_mod')
 					.heading__label_title= data.label
 		.heading__title=data.title
-		a(href="#").heading__link
-			span.heading__link_title= data.link_title
-			span.heading__link_icon
-				+icon('arrow-right', 'icon--size_mod')
+		if data.link_title
+			a(href="#").heading__link
+				span.heading__link_title= data.link_title
+				span.heading__link_icon
+					+icon('arrow-right', 'icon--size_mod')

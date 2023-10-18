@@ -1,0 +1,26 @@
+section.section.crumbs_section(class=mod)
+		.section_in.crumbs_section__in
+			.crumbs_section__list_w
+				+bread_crumbs({
+					list: [
+						{
+							text: 'Главная',
+							url: "#"
+						},
+						{
+							text: 'Каталог товаров',
+							url: "#"
+						},
+						{
+							text:'Категория',
+							url: "#"
+						},
+						{
+							text:'Подкатегория',
+							url: "#"
+						}
+					],
+				})
+
+			if title_mod
+				h1.crumbs_section__title= title_mod

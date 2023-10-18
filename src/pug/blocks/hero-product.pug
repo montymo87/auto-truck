@@ -1,0 +1,48 @@
+section.section.hero_product(class=hero_mod)
+	.section_in.hero_product__in
+		+bread_crumbs({
+			list: [
+				{
+					text: 'Главная',
+					url: "#"
+				},
+				{
+					text: 'Каталог товаров',
+					url: "#"
+				},
+				{
+					text:'Категория',
+					url: "#"
+				},
+				{
+					text:'Подкатегория',
+					url: "#"
+				}
+			],
+		})
+		.hero_product__row
+			.hero_product__col.hero_product__col--info_mod
+				.hero_product__info
+					.hero_product__title LAUNCH X431 PADVII LINK МНОГОФУНКЦИОНАЛЬНЫЙ ДИАГНОСТИЧЕСКИЙ СКАНЕР
+					.hero_product__descr Lorem ipsum dolor sit amet consectetur. Sollicitudin viverra turpis adipiscing posuere arcu odio gravida et molestie.
+					ul.hero__list_btn
+						li.hero__list_btn_item
+							a(href="#").btn_1
+								span.btn_title Добавить в корзину
+								span.btn_icon
+									+icon('tobasket', 'icon--size_mod')
+
+						li.hero__list_btn_item
+							a(href="#").btn_2
+								span.btn_title Купить в один клик
+								span.btn_icon
+									+icon('icon-click', 'icon--size_mod')
+
+			.hero_product__col.hero_product__col--img_mod
+				.hero_product__col_decor
+				a(href="#").hero_product__video_w
+					.hero_product__video_btn
+						img(src="images/play-btn.svg", alt="play button")
+
+					.hero_product__img_w
+						img(src="images/video-cover.jpg", alt="cover img")

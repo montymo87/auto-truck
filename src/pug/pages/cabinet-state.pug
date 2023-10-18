@@ -1,0 +1,41 @@
+extends ../layout/layout
+
+block vars
+	//- include ../templates/project-vars
+	include ../templates/mixins/m-preview
+	include ../templates/mixins/m-clip-text
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
+
+block content_block
+	-
+		mod = 'crumbs_section--cabinet_mod',
+		title_mod = 'Личный кабинет',
+	include ../blocks/crumb-section
+
+	-
+		nav = [
+			{
+				title: 'Информация'
+			},
+			{
+				title: 'История заказов'
+			},
+		]
+
+	section.section.product_tab.js-product-tab
+		.section_in.product_tab__in
+			.product_tab__nav
+				ul.product_tab__nav_list
+					each item, index in nav
+						li.product_tab__nav_item
+							a.product_tab__tabs_button.js-product-tab-trigger(href="#" data-tab=index class=`${index == 0 ? 'active_state' : ''}`)= item.title
+
+			.product_tab__list_w
+				.product_tab__content_wrap
+					+loop_while(2)
+						if i - 1 == 0
+							.product_tab__tabs_content.js-product-tab-content(class='active_state', data-tab= i - 1)
+								include ../blocks/cabinet-tab-1
+						if i - 1 == 1
+							.product_tab__tabs_content.js-product-tab-content(data-tab= i - 1)
+								include ../blocks/cabinet-tab-2-state

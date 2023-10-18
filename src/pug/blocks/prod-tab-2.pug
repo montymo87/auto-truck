@@ -1,0 +1,15 @@
+-
+	list = [
+	'Упаковочный лист Launch X431 PADVII Link',
+	'Упаковочный лист Launch Scope box O2-2',
+	'Инструкция по эксплуатации Launch X431 PADVII Link'
+	]
+
+.prod_tab_2
+	ul.prod_tab_2__list
+		each item in list
+			li.prod_tab_2__item
+				a(href="#").prod_tab_2__link
+					span.prod_tab_2__icon
+						+icon( 'download', 'icon--size_mod')
+					span.prod_tab_2__title=item

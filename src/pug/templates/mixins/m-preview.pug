@@ -4,7 +4,8 @@ include ./m-heading
 mixin preview(data)
 	section.section.preview(class=data.mod)
 		.section_in.preview__in
-			+heading(data.heading)
+			if data.heading
+				+heading(data.heading)
 			.preview__content
 				if data.slider
 					.preview__slider_w.js-preview-slider-w

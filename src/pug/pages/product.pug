@@ -1,0 +1,29 @@
+extends ../layout/layout
+
+block vars
+	//- include ../templates/project-vars
+	include ../templates/mixins/m-preview
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
+
+block content_block
+	include ../blocks/hero-product
+	include ../blocks/product-tab
+	-
+		mod = 'application--2v_mod',
+		application_bg = 'application-bg-2.jpg',
+
+	include ../blocks/application
+	+preview({
+		heading: {
+			title: 'Похожие товары',
+		},
+		items: 10,
+		slider: true,
+		card: {
+			mod: 'card--hit_mod',
+			label: true,
+			img: 'card.jpg',
+			title: 'Mercedes Star Diagnosis C4 + ноутбук с ПО',
+			price: '59 990 ₽',
+		}
+	})

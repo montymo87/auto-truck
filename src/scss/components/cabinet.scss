@@ -1,0 +1,216 @@
+.cabinet_tab_2__row {
+	background-color: #f2f2f2;
+}
+
+.cabinet__form_in {
+	max-width: 46.2rem;
+	width: 100%;
+}
+
+.cabinet__form_btn_list {
+	@include flex_block(row, wrap, flex-start);
+
+	margin: 0 -2rem -2rem 0;
+}
+
+.cabinet__form_btn_w {
+	padding: 0 2rem 2rem 0;
+}
+
+.cabinet__form_item {
+	@include bp($point_2, min) {
+		margin-bottom: 6rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 3rem;
+	}
+}
+
+.cabinet_tab_2__item_title {
+	font-size: 2.1rem;
+	font-weight: 600;
+	color: $black;
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 4rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.cabinet_tab_2__item {
+	position: relative;
+
+	background-color: $white;
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	&:last-child {
+		padding-bottom: 0;
+
+		&:after {
+			display: none;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+
+	&:after {
+		position: absolute;
+		top: 100%;
+		left: -50%;
+		display: block;
+		width: 200vw;
+		height: 1rem;
+		content: '';
+		background-color: #f2f2f2;
+	}
+
+	@include bp($point_2, min) {
+		padding: 8rem 0;
+	}
+	@include bp($point_3) {
+		padding: 4rem 0;
+	}
+}
+
+.cabinet_tab_2__list {
+	counter-reset: section;
+
+	border-bottom: 1px solid $gray_2;
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 2rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	@include bp($point_2, min) {
+		padding-bottom: 3rem;
+	}
+	@include bp($point_3) {
+		padding-bottom: 1rem;
+	}
+}
+
+.cabinet_tab_2__list_item {
+	position: relative;
+
+	&:after {
+		position: absolute;
+		bottom: 1px;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 0;
+		content: '';
+		border-bottom: 1px dotted $black_2;
+
+		@include bp($point_3) {
+			display: none;
+		}
+	}
+
+	&:before {
+		position: relative;
+		z-index: 1;
+		display: block;
+		padding-right: 1rem;
+		font-size: 1.5rem;
+		font-weight: 700;
+		counter-increment: section; /* Инкрементирует счётчик*/
+		content: counter(section) '.';
+		background-color: $white;
+
+		@include bp($point_3) {
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+
+	@include bp($point_2, min) {
+		@include flex_block(row, nowrap, flex-start, flex-end, flex-end);
+	}
+}
+
+.cabinet_tab_2__title {
+	position: relative;
+	z-index: 1;
+	padding-right: 1.2rem;
+	font-size: 1.5rem;
+	font-weight: 500;
+	background-color: $white;
+
+	@include bp($point_3) {
+		margin-bottom: 0.5rem;
+	}
+}
+
+.cabinet_tab_2__descr {
+	position: relative;
+	z-index: 1;
+	font-size: 2.1rem;
+
+	font-weight: 600;
+	background-color: $white;
+	margin-left: auto;
+}
+
+.cabinet_tab_2__item_total_w {
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-end, flex-end, flex-end);
+	}
+}
+
+.cabinet_tab_2__item_delivery_title,
+.cabinet_tab_2__item_total_total {
+	font-size: 1.5rem;
+	font-weight: 500;
+
+	&:not(:last-child) {
+		margin-right: 1rem;
+	}
+}
+
+.cabinet_tab_2__item_total_total {
+	&:not(:last-child) {
+		@include bp($point_3) {
+			margin-bottom: 0.5rem;
+		}
+	}
+}
+
+.cabinet_tab_2__item_delivery_w {
+	@include flex_block(row, wrap, flex-start, flex-end, flex-end);
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 3rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+.cabinet_tab_2__item_delivery {
+	font-size: 1.5rem;
+	font-weight: 700;
+}

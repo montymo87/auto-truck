@@ -1,0 +1,40 @@
+.cabinet
+	form(action="get")
+		.cabinet__form_in
+			.cabinet__form_item
+				+form_input({
+					id: 'cabinet_name',
+					placeholder: 'Имя',
+					required: true,
+					label: 'ФИО',
+				})
+			.cabinet__form_item
+				+form_input({
+					id: 'cabinet_mail',
+					type: 'email',
+					placeholder: 'mail@mail.com',
+					required: true,
+					label: 'Электронная почта',
+				})
+			.cabinet__form_item
+				+form_input({
+					id: 'cabinet_pas',
+					type: 'password',
+					placeholder: '',
+					required: true,
+					label: 'Новый пароль',
+				})
+			.cabinet__form_item
+				+form_input({
+					id: 'cabinet_pas_repeat',
+					type: 'password',
+					placeholder: '',
+					required: true,
+					label: 'Подтверждение нового пароля',
+				})
+
+			ul.cabinet__form_btn_list
+				li.cabinet__form_btn_w
+					button(type="submit").btn_4.cabinet__btn Сохранить
+				li.cabinet__form_btn_w
+					button(type="submit").btn_5.cabinet__btn Выйти

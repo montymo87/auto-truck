@@ -7,12 +7,12 @@ import 'swiper/css/effect-fade';
 import { buildSwiper, removeSwiper } from './build-swiper';
 
 const CLASS_NAMES = {
-	slider: '.js-product-slider',
-	wrapper: '.js-product-slider-w',
+	slider: '.js-promotion-slider',
+	wrapper: '.js-promotion-slider-w',
 	arrowNext: '.js-slider-navigation-next',
 	arrowPrev: '.js-slider-navigation-prev',
-	thumbSlider: '.js-product-thumb',
-	thumbWrapper: '.js-product-thumb-w',
+	thumbSlider: '.js-promotion-thumb',
+	thumbWrapper: '.js-promotion-thumb-w',
 };
 
 const promotionSlider = () => {

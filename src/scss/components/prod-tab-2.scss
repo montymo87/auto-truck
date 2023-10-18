@@ -1,0 +1,39 @@
+.prod_tab_2 {
+}
+
+.prod_tab_2__item {
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+}
+
+.prod_tab_2__link {
+	@include flex_block(row, nowrap, flex-start);
+
+	color: $red;
+	transition: color ease 0.3s;
+
+	&:hover {
+		color: darken($red, 15%);
+	}
+}
+
+.prod_tab_2__icon {
+	position: relative;
+	top: -2px;
+
+	display: block;
+	width: 2.4rem;
+	height: 2.4rem;
+
+	margin-right: 0.5rem;
+	flex: none;
+}
+
+.prod_tab_2__title {
+	@include text_s;
+
+	font-weight: 700;
+	text-decoration: underline;
+	color: inherit;
+}

@@ -1,0 +1,75 @@
+.product_tab {
+	background-color: $gray_4;
+}
+
+.product_tab__nav_list {
+	@include flex_block(row, wrap, flex-start);
+	margin: 0 0 -2rem 0;
+}
+
+.product_tab__nav_item {
+	padding: 0 0 2rem 0;
+}
+
+.product_tab__tabs_content {
+	// opacity: 0;
+	// pointer-events: none;
+	// position: absolute;
+	display: none;
+
+	&.active_state {
+		display: block;
+		// opacity: 1;
+		// pointer-events: auto;
+		// position: static;
+	}
+}
+
+.product_tab__tabs_button {
+	@include flex_block(row, wrap, center, center, center);
+
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding: 0 2rem;
+
+	background-color: $gray_4;
+	white-space: nowrap;
+	transition: color ease 0.3s, background-color ease 0.3s;
+	color: $black_2;
+
+	&.active_state {
+		background-color: $white;
+		color: $red;
+	}
+
+	&:focus,
+	&:hover {
+		color: $red;
+		text-decoration: none;
+	}
+
+	@include bp($point_2, min) {
+		min-width: 30rem;
+		height: 8rem;
+	}
+	@include bp($point_3) {
+		height: 6rem;
+	}
+}
+
+.product_tab__list_w {
+	background-color: $white;
+}
+
+.product_tab__content_wrap {
+	max-width: 120rem;
+	width: 100%;
+	margin: 0 auto;
+
+	@include bp($point_2, min) {
+		padding: 8rem 2rem;
+	}
+	@include bp($point_3) {
+		padding: 4rem 2rem;
+	}
+}

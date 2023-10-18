@@ -1,0 +1,47 @@
+extends ../layout/layout
+
+block vars
+	//- include ../templates/project-vars
+	include ../templates/mixins/m-preview
+	include ../templates/mixins/m-clip-text
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
+
+block content_block
+	-
+		mod = 'crumbs_section--block_mod'
+	include ../blocks/crumb-section
+	include ../blocks/scaner-list
+
+	+preview({
+		heading: {
+			label: 'ХИТЫ ПРОДАЖ',
+			title: 'Популярные товары из этой категории',
+			link_title: 'Перейти в каталог',
+		},
+		items: 10,
+		slider: true,
+		card: {
+			mod: 'card--hit_mod',
+			label: true,
+			img: 'card.jpg',
+			title: 'Mercedes Star Diagnosis C4 + ноутбук с ПО',
+			price: '59 990 ₽',
+		}
+	})
+
+
+	section.section
+		.section_in
+			.article_content
+				h1 Lorem ipsum dolor sit amet consectetur
+				p Lorem ipsum dolor sit amet consectetur. Purus amet suspendisse odio sed consectetur facilisi id sit accumsan. Amet lectus egestas vestibulum ut. Vestibulum feugiat tristique interdum turpis consequat turpis nisi lorem. Quis amet et egestas felis. Volutpat ac dolor viverra aliquam adipiscing odio semper molestie cras. Cursus commodo consequat non leo. Viverra parturient neque suscipit tellus rhoncus habitant egestas diam. Lacus eros nunc faucibus quam tortor laoreet at natoque dapibus. Faucibus morbi interdum elit ultrices arcu. A tristique tempor ornare semper nulla at imperdiet arcu. Turpis etiam ultricies ut sollicitudin proin cras amet. Euismod adipiscing ut nibh fusce sed elementum. Pretium neque pharetra morbi vitae rhoncus in auctor. Pharetra mi sodales placerat vel orci donec scelerisque tincidunt. Lectus pellentesque donec pulvinar facilisis vulputate leo pharetra. Semper vitae fermentum aliquam curabitur suspendis...
+
+				h2 Lorem ipsum dolor sit amet consectetur
+				p Lorem ipsum dolor sit amet consectetur. Purus amet suspendisse odio sed consectetur facilisi id sit accumsan. Amet lectus egestas vestibulum ut. Vestibulum feugiat tristique interdum turpis consequat turpis nisi lorem. Quis amet et egestas felis. Volutpat ac dolor viverra aliquam adipiscing odio semper molestie cras. Cursus commodo consequat non leo. Viverra parturient neque suscipit tellus rhoncus habitant egestas diam. Lacus eros nunc faucibus quam tortor laoreet at natoque dapibus. Faucibus morbi interdum elit ultrices arcu. A tristique tempor ornare semper nulla at imperdiet arcu. Turpis etiam ultricies ut sollicitudin proin cras amet. Euismod adipiscing ut nibh fusce sed elementum. Pretium neque pharetra morbi vitae rhoncus in auctor. Pharetra mi sodales placerat vel orci donec scelerisque tincidunt. Lectus pellentesque donec pulvinar facilisis vulputate leo pharetra. Semper vitae fermentum aliquam curabitur suspendis...
+
+				h2 Lorem ipsum dolor sit amet consectetur
+				p Lorem ipsum dolor sit amet consectetur. Purus amet suspendisse odio sed consectetur facilisi id sit accumsan. Amet lectus egestas vestibulum ut. Vestibulum feugiat tristique interdum turpis consequat turpis nisi lorem. Quis amet et egestas felis. Volutpat ac dolor viverra aliquam adipiscing odio semper molestie cras. Cursus commodo consequat non leo. Viverra parturient neque suscipit tellus rhoncus habitant egestas diam. Lacus eros nunc faucibus quam tortor laoreet at natoque dapibus. Faucibus morbi interdum elit ultrices arcu. A tristique tempor ornare semper nulla at imperdiet arcu. Turpis etiam ultricies ut sollicitudin proin cras amet. Euismod adipiscing ut nibh fusce sed elementum. Pretium neque pharetra morbi vitae rhoncus in auctor. Pharetra mi sodales placerat vel orci donec scelerisque tincidunt. Lectus pellentesque donec pulvinar facilisis vulputate leo pharetra. Semper vitae fermentum aliquam curabitur suspendis...
+
+
+
+

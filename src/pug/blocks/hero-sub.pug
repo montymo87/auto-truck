@@ -1,0 +1,43 @@
+section.section.hero_product(class=hero_mod)
+	.section_in.hero_product__in
+		+bread_crumbs({
+			list: [
+				{
+					text: 'Главная',
+					url: "#"
+				},
+				{
+					text: 'Каталог товаров',
+					url: "#"
+				},
+				{
+					text:'Категория',
+					url: "#"
+				},
+				{
+					text:'Подкатегория',
+					url: "#"
+				}
+			],
+		})
+		.hero_product__row
+			.hero_product__col.hero_product__col--info_mod
+				.hero_product__info
+					.hero_product__title Автосканеры LAUNCH
+					ul.hero__list_btn
+						li.hero__list_btn_item
+							a(href="#").btn_2
+								span.btn_title Готовые комплекты с планшетом
+
+						li.hero__list_btn_item
+							a(href="#").btn_2
+								span.btn_title Сканеры
+
+						li.hero__list_btn_item
+							a(href="#").btn_2
+								span.btn_title Система TMPS
+
+			.hero_product__col.hero_product__col--img_mod.hero_product__col--align_bot_mod
+				.hero_product__col_decor
+				.hero_product__img_w
+					img(src="images/hero-sub.png", alt="cover img")

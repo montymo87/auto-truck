@@ -1,7 +1,11 @@
 import previevSlider from 'components/preview-slider';
 import mobileSlider from 'components/mobile-slider';
 import promotionSlider from 'components/promotion-slider';
+import productSlider from 'components/product-slider';
 import clipText from 'components/clip-text';
+import tabs from 'components/tabs';
+import initPopup from 'components/init-popup';
+import alert from 'components/alert';
 
 import layout from 'layout/layout';
 import { pageLoad } from './utils';
@@ -41,7 +45,19 @@ export default class App {
 			mobileSlider(1024);
 			previevSlider();
 			promotionSlider();
+			productSlider();
 			clipText();
+			tabs({
+				wrapper: '.js-product-tab',
+				trigger: '.js-product-tab-trigger',
+				content: '.js-product-tab-content',
+				triggerClass: 'product_tab__tabs_button',
+				contentClass: 'product_tab__tabs_content',
+			});
+			initPopup('.js-popup-login-trigger', '.js-popup-login');
+			initPopup('.js-popup-pas-trigger', '.js-popup-pas');
+			initPopup('.js-popup-reg-trigger', '.js-popup-reg');
+			alert();
 		});
 		setTimeout(() => {
 			this.importPage();

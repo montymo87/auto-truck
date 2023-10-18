@@ -1,0 +1,53 @@
+include ../templates/mixins/m-card
+
+section.section.filter
+	.section_in.filter__in
+		.filter__row_w
+			.filter__row
+				.filter__sort Сортировать:
+				.filter__filter_w
+					button(type="button").filter__for.filter__for--price_mod
+						span.filter__for_icon
+							+icon('sort', 'icon--size_mod')
+						span.filter__for_title По цене
+					button(type="button").filter__for.filter__for--alphabet_mod
+						span.filter__for_icon
+							+icon('alphabet', 'icon--size_mod')
+						span.filter__for_title По алфавиту
+					button(type="button").filter__for.filter__for--newest_mod.filter__for--active_state_mod
+						span.filter__for_icon
+							+icon('new', 'icon--size_mod')
+						span.filter__for_title По новизне
+					button(type="button").filter__for.filter__for--popular_mod
+						span.filter__for_icon
+							+icon('hit-2', 'icon--size_mod')
+						span.filter__for_title По популярности
+					.filter__for.filter__for--range_mod
+						.filter__for_input_w
+							span.filter__for_range_title Цена:
+							.filter__for_range_input_w
+								input(type="text", name="" id='filter__for_range_min' placeholder="10000").filter__for_range_text.filter__for_range_text--min_mod
+							.filter__for_range_slder_w
+								input(type="range", name="" id='filter__for_range_slider').filter__for_range_slider
+							.filter__for_range_input_w
+								input(type="text", name="" id='filter__for_range_max' placeholder="350000").filter__for_range_text.filter__for_range_text--max_mod
+
+			//- if filter_list
+			.filter__list_content
+				.filter__list_w
+					ul.filter__list
+						+loop_while(16)
+							li.filter__list_item
+								+card({
+									mod: 'card--hit_mod',
+									label: true,
+									img: 'card.jpg',
+									title: 'Mercedes Star Diagnosis C4 + ноутбук с ПО',
+									price: '59 990 ₽',
+								})
+
+				+pagination({
+					pages: 5,
+					arrows: true
+				})
+

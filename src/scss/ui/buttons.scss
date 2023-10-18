@@ -9,6 +9,11 @@
 	.btn_icon:not(:first-child) {
 		margin-left: 1rem;
 	}
+
+	.btn_icon {
+		width: 2.6rem;
+		height: 2.6rem;
+	}
 }
 
 .btn_2 {
@@ -26,6 +31,23 @@
 	.btn_icon {
 		width: 2.6rem;
 		height: 2.6rem;
+	}
+
+	.prod_tab_1__list_btn & {
+		color: $black_2;
+		border: 1px solid $black_2;
+
+		.btn_icon {
+			color: $red;
+		}
+
+		&:hover {
+			color: $white;
+
+			.btn_icon {
+				color: $white;
+			}
+		}
 	}
 }
 
@@ -53,4 +75,34 @@
 .btn_4 {
 	@include btn_style_red;
 	@include btn_size_l;
+
+	.cabinet__form_btn_w & {
+		min-width: 13rem;
+	}
+
+	.popup & {
+		width: 100%;
+	}
+}
+
+.btn_5 {
+	@include btn_style_border_gray;
+	@include btn_size_l;
+
+	.cabinet__form_btn_w & {
+		min-width: 11.4rem;
+	}
+
+	.popup & {
+		width: 100%;
+	}
+}
+
+.btn_6 {
+	@include btn_style_red_gradient;
+	@include btn_size_l;
+
+	.popup &:not(.popup__content_form_btn_recovery) {
+		width: 100%;
+	}
 }
