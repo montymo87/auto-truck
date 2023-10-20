@@ -1,0 +1,36 @@
+extends ../layout/layout
+
+block vars
+	//- include ../templates/project-vars
+	include ../templates/mixins/m-preview
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
+
+block content_block
+	include ../blocks/crumb-section
+	include ../blocks/search-bar
+
+	section.section.filter.filter--search_mod
+		.section_in.filter__in
+			.filter__list_content
+				.filter__list_w
+					.filter__list_result_descr_list_w
+						ul.filter__list_result_descr_list
+							li.filter__list_result_descr По запросу
+							li.filter__list_result_descr.filter__list_result_descr--name_mod Lorem ipsum dolor sit amet consectetur
+							li.filter__list_result_descr ничего не найдено. Попробуйте другой запрос.
+
+	+preview({
+		heading: {
+			label: 'ХИТЫ ПРОДАЖ',
+			title: 'Популярные товары на нашем сайте',
+		},
+		items: 10,
+		slider: true,
+		card: {
+			mod: 'card--hit_mod',
+			label: true,
+			img: 'card.jpg',
+			title: 'Mercedes Star Diagnosis C4 + ноутбук с ПО',
+			price: '59 990 ₽',
+		}
+	})

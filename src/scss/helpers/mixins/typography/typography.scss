@@ -21,15 +21,16 @@
 }
 
 @mixin h4 {
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 }
 
 @mixin h5 {
-	font-size: 1.6rem;
+	font-size: 1.5rem;
+	font-weight: 700;
 }
 
 @mixin h6 {
-	font-size: 2rem;
+	font-size: 1.2rem;
 }
 
 @mixin text_l {

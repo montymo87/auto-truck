@@ -1,0 +1,44 @@
+extends ../layout/layout
+
+block vars
+	//- include ../templates/project-vars
+	include ../templates/mixins/m-preview
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
+
+block content_block
+	-
+		mod = 'crumbs_section--block_mod'
+	include ../blocks/crumb-section
+
+	section.section.promotion_list.promotion_list--offset_mod
+		.section_in.promotion_list__in
+			.promotion_list__title_w
+				+heading({
+					title: 'Заголовок акции',
+				})
+			.promotion_list__img_block
+				+picture({
+					img: `promotion-2.jpg`,
+					class: 'promotion_list__img__img_w',
+					img_class: 'promotion_list__img__img',
+					alt: 'some image',
+				})
+
+			.article_content
+				p Lorem ipsum dolor sit amet consectetur. Purus amet suspendisse odio sed consectetur facilisi id sit accumsan. Amet lectus egestas vestibulum ut. Vestibulum feugiat tristique interdum turpis consequat turpis nisi lorem. Quis amet et egestas felis. Volutpat ac dolor viverra aliquam adipiscing odio semper molestie cras. Cursus commodo consequat non leo. Viverra parturient neque suscipit tellus rhoncus habitant egestas diam. Lacus eros nunc faucibus quam tortor laoreet at natoque dapibus. Faucibus morbi interdum elit ultrices arcu. A tristique tempor ornare semper nulla at imperdiet arcu. Turpis etiam ultricies ut sollicitudin proin cras amet. Euismod adipiscing ut nibh fusce sed elementum. Pretium neque pharetra morbi vitae rhoncus in auctor. Pharetra mi sodales placerat vel orci donec scelerisque tincidunt. Lectus pellentesque donec pulvinar facilisis vulputate leo pharetra. Semper vitae fermentum aliquam curabitur suspendis...
+
+
+	+preview({
+		heading: {
+			title: 'Товары, участвующие в акции:',
+		},
+		items: 12,
+		pagination: true,
+		card: {
+			mod: 'card--hit_mod',
+			label: true,
+			img: 'card.jpg',
+			title: 'Mercedes Star Diagnosis C4 + ноутбук с ПО',
+			price: '59 990 ₽',
+		}
+	})

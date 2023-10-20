@@ -1,0 +1,17 @@
+extends ../layout/layout
+
+block vars
+	//- include ../templates/project-vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
+
+block content_block
+	-
+		mod = 'crumbs_section--block_mod'
+	include ../blocks/crumb-section
+
+	section.section.contacts
+		.section_in.contacts__in
+			+heading({
+				title: 'Адреса и контакты',
+			})
+

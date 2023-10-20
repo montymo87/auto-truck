@@ -1,0 +1,49 @@
+.guarantees__row {
+	@include bp($point_2, min) {
+		@include flex_block(row, nowrap, flex-start);
+	}
+}
+
+.guarantees__col {
+	&.guarantees__col--info_mod {
+		width: 100%;
+
+		@include bp($point_2, min) {
+			padding-right: 3rem;
+		}
+
+		&:not(:last-child) {
+			@include bp($point_3) {
+			}
+			margin-bottom: 3rem;
+		}
+	}
+
+	&.guarantees__col--img_mod {
+		flex: none;
+		width: 100%;
+		height: 100%;
+		@include bp($point_2, min) {
+			max-width: 46.2rem;
+		}
+	}
+}
+
+.guarantees__info {
+	width: 100%;
+
+	@include bp($point_2, min) {
+		max-width: 83rem;
+	}
+}
+
+.guarantees__img_w {
+	display: block;
+
+	width: 100%;
+	height: 100%;
+}
+
+.guarantees__img {
+	@include contain_img;
+}

@@ -1,0 +1,32 @@
+extends ../layout/layout
+
+block vars
+	//- include ../templates/project-vars
+	include ../templates/mixins/m-heading
+	include ../templates/mixins/m-promotion-card
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Course', template_name: 'index'}
+
+block content_block
+	-
+		mod = 'crumbs_section--block_mod'
+	include ../blocks/crumb-section
+
+	section.section.promotion_list
+		.section_in.promotion_list__in
+			.promotion_list__title_w
+				+heading({
+					title: 'Акции',
+				})
+			ul.promotion_list__list
+				+loop_while(3)
+					li.promotion_list__item
+						+promotion_card({
+							title: 'Заголовок акции',
+							descr: 'Lorem ipsum dolor sit amet consectetur. Donec quisque in et tincidunt volutpat eleifend. Sed in risus vulputate sit accumsan accumsan id risus hac. Massa a ultricies vulputate auctor cras. Sem eget pellentesque molestie lobortis at porttitor tellus.',
+							list: [
+								{
+									btn: 'Подробнее',
+								},
+							]
+						})
+

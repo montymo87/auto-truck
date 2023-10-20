@@ -1,0 +1,33 @@
+extends ../layout/layout
+
+block vars
+	//- include ../templates/project-vars
+	include ../templates/mixins/m-preview
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Course', template_name: 'index'}
+
+block content_block
+	-
+		data_mod = {
+			title: 'НАЗВАНИЕ КУРСА',
+			descr: 'Lorem ipsum dolor sit amet consectetur. Sollicitudin viverra turpis adipiscing posuere arcu odio gravida et molestie.',
+			img: "images/video-cover.jpg",
+		}
+	include ../blocks/hero-product
+	include ../blocks/course-info
+
+	-
+		mod = 'application--2v_mod',
+		application_bg = 'application-bg-2.jpg',
+	include ../blocks/application
+
+	+preview({
+		heading: {
+			title: 'Больше курсов',
+		},
+		mod: 'preview--course_mod',
+		items: 2,
+		card_course: {
+			mod: true,
+		},
+	})
+

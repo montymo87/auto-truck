@@ -44,6 +44,11 @@
 	align-items: center;
 
 	margin-right: -2rem;
+
+	.hero_product & {
+		margin-top: -2rem;
+		padding-bottom: 5rem;
+	}
 }
 
 .bread_crumbs__item {

@@ -1,0 +1,19 @@
+mixin card_course(data)
+	.card_course(class=data.mod)
+		.card_course__img_decor
+		.card_course__row
+			.card_course__col.card_course__col--info_mod
+				.card_course__type КУРС
+				.card_course__title Название курса
+				.card_course__descr Lorem ipsum dolor sit amet consectetur. Id sem tortor ac cum lectus.
+				a(href="#").card_course__link
+					span.card_course__link_title ПОСМОТРЕТЬ
+					span.card_course__link_icon
+						+icon('arrow-right-2', 'icon--size_mod')
+			.card_course__col.card_course__col--img_mod
+				+picture({
+					img: `video-cover.jpg`,
+					class: 'card_course__img_w',
+					img_class: 'card_course__img',
+					alt: 'some image',
+				})

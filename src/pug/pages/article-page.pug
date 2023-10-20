@@ -1,0 +1,36 @@
+extends ../layout/layout
+
+block vars
+	//- include ../templates/project-vars
+	include ../templates/mixins/m-preview
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
+
+block content_block
+	-
+		mod = 'crumbs_section--block_mod'
+	include ../blocks/crumb-section
+
+	section.section.article_page
+		.section_in.article_page__in
+			.article_content
+				h1 Lorem ipsum dolor sit amet consectetur. Velit in at fermentum malesuada.
+				img(src="images/full-screen-cover.jpg", alt="")
+				h2 Lorem ipsum dolor sit amet consectetur
+				p Lorem ipsum dolor sit amet consectetur. Ornare volutpat viverra suscipit imperdiet. Enim eu a amet pretium molestie leo amet cras. Fusce arcu tellus ut eget risus arcu massa. Dictum blandit sit hendrerit placerat phasellus lorem tellus sit vel. Fusce cursus nulla hac pellentesque lorem ultricies. Condimentum ut orci quam nullam. Nec enim mauris et id feugiat purus turpis eget dolor. Pellentesque rhoncus sed fames nunc tempus vel nec. Scelerisque quisque enim sapien viverra aliquam elementum sed feugiat eget. Quis dui rutrum nibh viverra arcu. Scelerisque ut gravida est mattis mauris. Facilisis porttitor enim volutpat elementum. Mauris nec mauris auctor imperdiet maecenas sed lobortis. In nunc condimentum vitae praesent. Urna nibh sit pellentesque mauris eu id fermentum tortor massa. Id consequat vitae at fermentum eget. Malesuada egestas mauris malesuada nec aliquam ullamcorper facilisi at sed. Eget neque metus faucibus odio pharetra. Interdum elit scelerisque in diam ipsum in nisl. Tincidunt nulla ullamcorper eget velit nulla at lorem sed at. Magna nunc leo et tristique. Sagittis amet lectus volutpat ac turpis morbi pharetra accumsan. Sem facilisis tempor egestas ut aenean vitae lorem. Nullam suspendisse ultrices nibh vulputate semper ut elit integer. Laoreet at dignissim tempus egestas faucibus. Quam odio nunc ornare cras nisi lacus vitae tristique ultrices. Fusce massa purus purus pellentesque sit dapibus. Magna ac tempus sed nunc convallis vitae. Congue phasellus porttitor ut quis sed. Eu ac commodo adipiscing proin. Adipiscing orci purus mauris dignissim commodo cras neque. Id arcu viverra fames eu quis senectus curabitur risus. Tempus ultrices donec urna eu nam. Et mollis purus aliquam proin elit ac vulputate proin. Fermentum orci vitae adipiscing at sagittis nec. Egestas non ultricies massa lacus vestibulum. Gravida elementum sociis sagittis convallis feugiat pellentesque egestas congue. Sed sed sit in est nullam donec justo pretium pellentesque. Metus porttitor nisl dui donec augue pulvinar nibh eget auctor. Justo in turpis accumsan diam tellus ultrices lorem. Accumsan lacinia faucibus ut urna augue morbi est nascetur quis. Donec sed etiam arcu diam. Hendrerit rhoncus urna gravida elementum velit aliquet. Nibh sagittis consectetur velit consequat non vitae. Pellentesque nulla feugiat vitae orci a viverra nunc. Lobortis sed sit purus est quisque dui tincidunt. Sagittis eu at aliquet mi. Sed sed ipsum dictum pellentesque elementum amet. Sed elit erat tellus enim quis.
+
+
+	+preview({
+		heading: {
+			title: 'Статьи',
+		},
+		items: 3,
+		mod: 'preview--article_mod',
+		card: {
+			mod: 'card--article_mod',
+			label: true,
+			img: 'card.jpg',
+			title: 'Lorem ipsum dolor sit amet consectetur. Velit in at fermentum malesuada.',
+			data: '01/01/2023',
+			read: 'ЧИТАТЬ СТАТЬЮ',
+		}
+	})

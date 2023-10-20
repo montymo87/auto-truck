@@ -1,6 +1,17 @@
+-
+	data_list = {
+		title: 'LAUNCH X431 PADVII LINK МНОГОФУНКЦИОНАЛЬНЫЙ ДИАГНОСТИЧЕСКИЙ СКАНЕР',
+		descr: 'Lorem ipsum dolor sit amet consectetur. Sollicitudin viverra turpis adipiscing posuere arcu odio gravida et molestie.',
+		img: "images/video-cover.jpg",
+		play: true,
+	}
+
+	data = data_mod || data_list
+
 section.section.hero_product(class=hero_mod)
 	.section_in.hero_product__in
 		+bread_crumbs({
+			mod: 'crumbs_section--block_mod',
 			list: [
 				{
 					text: 'Главная',
@@ -23,8 +34,8 @@ section.section.hero_product(class=hero_mod)
 		.hero_product__row
 			.hero_product__col.hero_product__col--info_mod
 				.hero_product__info
-					.hero_product__title LAUNCH X431 PADVII LINK МНОГОФУНКЦИОНАЛЬНЫЙ ДИАГНОСТИЧЕСКИЙ СКАНЕР
-					.hero_product__descr Lorem ipsum dolor sit amet consectetur. Sollicitudin viverra turpis adipiscing posuere arcu odio gravida et molestie.
+					.hero_product__title= data.title
+					.hero_product__descr= data.descr
 					ul.hero__list_btn
 						li.hero__list_btn_item
 							a(href="#").btn_1
@@ -41,8 +52,9 @@ section.section.hero_product(class=hero_mod)
 			.hero_product__col.hero_product__col--img_mod
 				.hero_product__col_decor
 				a(href="#").hero_product__video_w
-					.hero_product__video_btn
-						img(src="images/play-btn.svg", alt="play button")
+					if data.play
+						.hero_product__video_btn
+							img(src="images/play-btn.svg", alt="play button")
 
 					.hero_product__img_w
-						img(src="images/video-cover.jpg", alt="cover img")
+						img(src=data.img, alt="cover img")

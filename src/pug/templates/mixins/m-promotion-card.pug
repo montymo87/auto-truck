@@ -1,0 +1,19 @@
+mixin promotion_card(data)
+	.promotion_card(class= data.mod)
+		.promotion_card__row
+			.promotion_card__col.promotion_card__col--info_mod
+				.promotion_card__info
+					h2.promotion_card__title= data.title
+					.promotion_card__descr= data.descr
+					ul.promotion_card__list
+						each item in data.list
+							li.promotion_card__item
+								a(href="#").btn_2
+									span.btn_title= item.btn
+			.promotion_card__col.promotion_card__col--img_mod
+				+picture({
+						img: `promotion.jpg`,
+						class: 'promotion_card__img_w',
+						img_class: 'promotion_card__img',
+						alt: 'some image',
+					})

@@ -1,0 +1,44 @@
+.search_bar__title {
+	@include h1;
+	font-weight: 600;
+
+	&:not(:last-child) {
+		margin-bottom: 5rem;
+	}
+}
+
+.search_bar__search_row {
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-start, center, center);
+	}
+}
+
+.search_bar__search {
+	position: relative;
+}
+
+.search_bar__search_w {
+	flex-grow: 1;
+
+	@include bp($point_2, min) {
+		margin-right: 3rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 2rem;
+	}
+}
+
+.search_bar__search_btn {
+	position: absolute;
+
+	top: 0;
+	right: 0;
+}
+
+.search_bar__search_input {
+	padding-right: 15rem;
+}
+
+.search_bar__select_w {
+	min-width: 34rem;
+}

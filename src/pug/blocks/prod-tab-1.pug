@@ -22,11 +22,29 @@
 		},
 	]
 
+-
+	data_list = {
+		title: "LAUNCH X431 PADVII LINK МНОГОФУНКЦИОНАЛЬНЫЙ ДИАГНОСТИЧЕСКИЙ СКАНЕР",
+		slider: true,
+		row: true,
+		advantages: true,
+	}
+
+	data = data_mod || data_list
+
 .prod_tab_1
-	.prod_tab_1__title LAUNCH X431 PADVII LINK МНОГОФУНКЦИОНАЛЬНЫЙ ДИАГНОСТИЧЕСКИЙ СКАНЕР
+	.prod_tab_1__title= data.title
 	.prod_tab_1__row
 		.prod_tab_1__col.prod_tab_1__col--slider_mod
+			if data.img
+				+picture({
+					img: `video-cover.jpg`,
+					class: 'prod_tab_1__img_w',
+					img_class: 'prod_tab_1__img',
+					alt: 'some image',
+				})
 
+			if data.slider
 				.prod_tab_1__slider_thumb_w.js-product-thumb-w
 					.prod_tab_1__slider_thumb.js-product-thumb
 						each item in [1,2,3,4,5,6,7,8]
@@ -51,11 +69,12 @@
 						.prod_tab_1__price_title Цена:
 						.prod_tab_1__price_cost 300 000 ₽
 
-				ul.prod_tab_1__about_list
-					each item in list
-						li.prod_tab_1__about_item= item.title
-							.prod_tab_1__about_icon
-								+icon( item.icon, 'icon--size_mod')
+				if data.advantages
+					ul.prod_tab_1__about_list
+						each item in list
+							li.prod_tab_1__about_item= item.title
+								.prod_tab_1__about_icon
+									+icon( item.icon, 'icon--size_mod')
 
 				ul.prod_tab_1__list_btn
 					li.prod_tab_1__list_btn_item
@@ -75,13 +94,14 @@
 			p Сканер Launch X-431 PADVII Link - это обновления версия флагмана среди диагностических сканеров от компании Launch. Его можно охарактеризовать фразой - “Достаточно одного”. Так как сканер воплотил в себе самые передовые технологии Launch и в паре с мощнейшим железом позволит вам быть актуальным специалистом на годы вперёд. С его помощью вы сможете проводить не только стандартную диагностику авто, а также онлайн программирование, кодирование, ведомую диагностику и многое другое.
 			p В данной версии сканера обновилась комплектация. В комплект входит VCI адаптер Smartlink C, который поддерживает помимо стандартных функций, еще и диагностику по протоколу J2534 и RP1210/D-PDU. Комплект OBD-I адаптеров приобретается отдельно. Карта покрытия охватывает более 90 марок автомобилей и более 30 сервисных функций.
 
-	.prod_tab_1__info_row
-		.prod_tab_1__info_col
-			a(href="#").prod_tab_1__info_link
-				.prod_tab_1__info_img
-					img(src="images/video-cover.jpg", alt="")
+	if data.row
+		.prod_tab_1__info_row
+			.prod_tab_1__info_col
+				a(href="#").prod_tab_1__info_link
+					.prod_tab_1__info_img
+						img(src="images/video-cover.jpg", alt="")
 
-		.prod_tab_1__info_col
-			a(href="#").prod_tab_1__info_link
-				.prod_tab_1__info_img
-					img(src="images/video-cover.jpg", alt="")
+			.prod_tab_1__info_col
+				a(href="#").prod_tab_1__info_link
+					.prod_tab_1__info_img
+						img(src="images/video-cover.jpg", alt="")

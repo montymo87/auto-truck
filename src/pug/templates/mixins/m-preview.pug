@@ -1,4 +1,5 @@
 include ./m-card
+include ./m-card-course
 include ./m-heading
 
 mixin preview(data)
@@ -17,5 +18,15 @@ mixin preview(data)
 					.preview__list
 						+loop_while(data.items)
 							.preview__list_item
-								+card(data.card)
+								if data.card
+									+card(data.card)
+								if data.card_course
+									+card_course(data.card_course)
+
+			if data.pagination
+				.preview__pagination
+					+pagination({
+						pages: 5,
+						arrows: true
+					})
 

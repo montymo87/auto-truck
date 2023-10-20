@@ -1,0 +1,24 @@
+extends ../layout/layout
+
+block vars
+	//- include ../templates/project-vars
+	include ../templates/mixins/m-preview
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
+
+block content_block
+	-
+		mod = 'crumbs_section--block_mod'
+	include ../blocks/crumb-section
+
+	+preview({
+		heading: {
+			title: 'Обучающие курсы',
+		},
+		pagination: true,
+		mod: 'preview--course_mod',
+		items: 8,
+		card_course: {
+			mod: true,
+		},
+	})
+

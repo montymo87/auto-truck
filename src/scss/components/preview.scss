@@ -36,7 +36,24 @@
 			grid-template-columns: 1fr;
 		}
 	}
+
+	.preview--course_mod & {
+		@include bp($point_2, min) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include bp($point_3) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
 }
 
-.preview__slider_nav {
+.preview__content {
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 10rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 5rem;
+		}
+	}
 }

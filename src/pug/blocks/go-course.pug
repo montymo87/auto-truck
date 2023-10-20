@@ -1,0 +1,23 @@
+section.section.go_course
+	.go_course__bg_img_w
+		img(src="images/bg-shape-all.svg", alt="bg image").go_course__bg_img
+
+	.section_in.go_course__in
+		.go_course__row
+			.go_course__col.go_course__col--info_mod
+				.go_course__info
+					h2.go_course__title Lorem ipsum dolor sit amet consectetur
+					.go_course__descr Lorem ipsum dolor sit amet consectetur Eget non quam vitae dictum egestas dignissim enim leo
+					.go_course__btn_w
+						a(href="#").btn_3.go_course__btn
+							span.btn_title Перейти к курсам
+							span.btn_icon
+								+icon('play', 'icon--size_mod')
+
+			.go_course__col.go_course__col--img_mod
+				+picture({
+					img: `learning.png`,
+					class: 'go_course__img_w',
+					img_class: 'go_course__img',
+					alt: 'some image',
+				})

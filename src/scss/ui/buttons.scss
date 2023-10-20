@@ -14,6 +14,18 @@
 		width: 2.6rem;
 		height: 2.6rem;
 	}
+
+	.search_bar__search_btn & {
+		height: 6rem;
+		line-height: 6rem;
+		border-radius: 3rem;
+	}
+
+	.course_info & {
+		@include bp($point_2, min) {
+			width: 100%;
+		}
+	}
 }
 
 .btn_2 {
@@ -31,6 +43,12 @@
 	.btn_icon {
 		width: 2.6rem;
 		height: 2.6rem;
+	}
+
+	.course_info & {
+		@include bp($point_2, min) {
+			width: 100%;
+		}
 	}
 
 	.prod_tab_1__list_btn & {
@@ -95,6 +113,16 @@
 
 	.popup & {
 		width: 100%;
+	}
+
+	.contacts & {
+		border-color: $black_2;
+		color: $black_2;
+
+		&:hover {
+			color: $white;
+			border-color: transparent;
+		}
 	}
 }
 

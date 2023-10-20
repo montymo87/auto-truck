@@ -1,0 +1,26 @@
+section.section.search_bar(class=mod)
+	.section_in.search_bar__in
+		h1.search_bar__title Поиск по товарам
+		.search_bar__search_row
+			.search_bar__search_w
+				form(action="", method="get")
+					.search_bar__search
+						+form_input({
+							placeholder: 'Пароль',
+							type: 'password',
+							class: 'form_input__element search_bar__search_input',
+							id: 'login_pas'
+						})
+						.search_bar__search_btn
+							button(type="submit").btn_1
+								span.header__control_whatsapp_icon
+									+icon('search', 'icon--size_mod')
+								span.header__control_whatsapp_title Найти
+
+			.search_bar__select_w
+				select(id="select-filter-search" placeholder="" autocomplete="off").search_bar__select.js-select-filter-search
+					option(value="pop" data-src="images/search-bar/1.svg" ) Популярные
+					option(value="news" data-src="images/search-bar/2.svg" ) Новинки
+					option(value="highter" data-src="images/search-bar/3.svg" ) Сначала дороже
+					option(value="lower" data-src="images/search-bar/4.svg" ) Сначала дешевле
+					option(value="alphabet" data-src="images/search-bar/5.svg" ) По алфавиту

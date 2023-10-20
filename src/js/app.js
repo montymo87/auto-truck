@@ -6,6 +6,7 @@ import clipText from 'components/clip-text';
 import tabs from 'components/tabs';
 import initPopup from 'components/init-popup';
 import alert from 'components/alert';
+import selectInitSearch from 'components/select-init-search';
 
 import layout from 'layout/layout';
 import { pageLoad } from './utils';
@@ -58,6 +59,7 @@ export default class App {
 			initPopup('.js-popup-pas-trigger', '.js-popup-pas');
 			initPopup('.js-popup-reg-trigger', '.js-popup-reg');
 			alert();
+			// selectInitSearch();
 		});
 		setTimeout(() => {
 			this.importPage();

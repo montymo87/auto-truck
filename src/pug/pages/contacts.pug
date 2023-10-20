@@ -1,0 +1,44 @@
+extends ../layout/layout
+
+block vars
+	//- include ../templates/project-vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
+
+block content_block
+	-
+		mod = 'crumbs_section--block_mod'
+	include ../blocks/crumb-section
+
+	section.section.contacts
+		.section_in.contacts__in
+			+heading({
+				title: 'Адреса и контакты',
+			})
+			.contacts__row
+				.contacts__item
+					a(href="#").contacts__item_phone
+						span.contacts__item_icon
+							+icon('phone-2', 'icon--size_mod')
+						span.contacts__item_title +7 (989) 261-39-83
+
+				.contacts__item
+					a(href="#").contacts__item_mail
+						span.contacts__item_icon
+							+icon('mail', 'icon--size_mod')
+						span.contacts__item_title launch-russia@yandex.ru
+
+				.contacts__item
+					.contacts__social_title Социальные сети:
+					ul.contacts__social_list
+						li.contacts__social_item
+							a(href="#").contacts__social_link
+								+icon('whatsapp-2', 'icon--size_mod')
+						li.contacts__social_item
+							a(href="#").contacts__social_link
+								+icon('youtube', 'icon--size_mod')
+
+				.contacts__item.contacts__item--btn_mod
+					a(href="#").btn_5
+						span.contacts__item_title Оставить заявку на звонок
+
+	include ../blocks/map

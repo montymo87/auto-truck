@@ -176,6 +176,15 @@ html :where(.wp-block) {
 	h2 {
 		@include h2;
 		font-weight: 500;
+
+		&:not(:last-child) {
+			@include bp($point_2, min) {
+				margin-bottom: 3rem;
+			}
+			@include bp($point_3) {
+				margin-bottom: 2rem;
+			}
+		}
 	}
 
 	h3 {
@@ -188,6 +197,24 @@ html :where(.wp-block) {
 
 	h5 {
 		@include h5;
+
+		&:not(:last-child) {
+			@include bp($point_2, min) {
+				margin-bottom: 3rem;
+			}
+			@include bp($point_3) {
+				margin-bottom: 2rem;
+			}
+		}
+
+		&:not(:first-child) {
+			@include bp($point_2, min) {
+				margin-top: 3rem;
+			}
+			@include bp($point_3) {
+				margin-top: 2rem;
+			}
+		}
 	}
 
 	h6 {
@@ -215,6 +242,21 @@ html :where(.wp-block) {
 		font-weight: 700;
 	}
 
+	img {
+		display: block;
+		max-width: 100%;
+		max-height: 100%;
+
+		&:not(:last-child) {
+			@include bp($point_2, min) {
+				margin-bottom: 8rem;
+			}
+			@include bp($point_3) {
+				margin-bottom: 4rem;
+			}
+		}
+	}
+
 	&:not(:last-child) {
 		@include bp($point_2, min) {
 			margin-bottom: 5rem;
@@ -223,6 +265,39 @@ html :where(.wp-block) {
 			margin-bottom: 3rem;
 		}
 	}
+}
+
+.wpcf7-form-control {
+	&.wpcf7-not-valid {
+		box-shadow: inset 0 0 0 1px red !important;
+	}
+}
+
+.wpcf7-form-control-wrap {
+	.wpcf7-not-valid-tip {
+		display: none !important;
+	}
+}
+
+.wpcf7-response-output {
+	display: none !important;
+}
+
+.ajax-loader {
+	display: none !important;
+}
+
+.wpcf7-spinner {
+	display: none !important;
+}
+
+// .wpcf7-not-valid {
+//     border-bottom: 0.1rem solid #ff0000 !important;
+// }
+
+input[type='submit'] {
+	border: none;
+	cursor: pointer;
 }
 
 //------------------------------------------------------------base styles###

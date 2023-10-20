@@ -12,16 +12,10 @@
 }
 
 .product_tab__tabs_content {
-	// opacity: 0;
-	// pointer-events: none;
-	// position: absolute;
 	display: none;
 
 	&.active_state {
 		display: block;
-		// opacity: 1;
-		// pointer-events: auto;
-		// position: static;
 	}
 }
 

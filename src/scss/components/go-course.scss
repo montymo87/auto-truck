@@ -1,4 +1,4 @@
-.go_curse__bg_img_w {
+.go_course__bg_img_w {
 	position: absolute;
 
 	bottom: 0;
@@ -8,17 +8,17 @@
 	height: 84%;
 }
 
-.go_curse__in {
+.go_course__in {
 	position: relative;
 	z-index: 1;
 }
 
-.go_curse__row {
+.go_course__row {
 	@include flex_block(row, wrap, flex-start, center, center);
 }
 
-.go_curse__col {
-	&.go_curse__col--img_mod {
+.go_course__col {
+	&.go_course__col--img_mod {
 		@include bp($point_4 - 1) {
 			display: none;
 		}
@@ -33,22 +33,22 @@
 	}
 }
 
-.go_curse__info {
+.go_course__info {
 	max-width: 45rem;
 }
 
-.go_curse__bg_img {
+.go_course__bg_img {
 	@include cover_img;
 	object-position: bottom bottom;
 }
 
-.go_curse__btn:not(:hover) {
+.go_course__btn:not(:hover) {
 	.btn_icon {
 		color: $red;
 	}
 }
 
-.go_curse__title {
+.go_course__title {
 	@include h1;
 
 	&:not(:last-child) {
@@ -56,7 +56,7 @@
 	}
 }
 
-.go_curse__descr {
+.go_course__descr {
 	@include text_l;
 
 	&:not(:last-child) {
@@ -64,7 +64,7 @@
 	}
 }
 
-.go_curse__img_w {
+.go_course__img_w {
 	display: block;
 
 	margin-bottom: calc(-1 * var(--gl-vr-indent));
@@ -87,6 +87,6 @@
 	}
 }
 
-.go_curse__img {
+.go_course__img {
 	@include contain_img;
 }

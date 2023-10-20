@@ -1,0 +1,43 @@
+-
+	list = [
+		{
+			title: 'Москва, Локомотивный проезд 21 с5',
+			mod: 'map__nav_item--active_state',
+		},
+		{
+			title: 'Санкт-Петербург, ул. Заречная 45 к2',
+		},
+		{
+			title: 'Ростов, ул. Скачкова 52',
+		},
+		{
+			title: 'Краснодар, ул. Дальняя 4/4',
+		},
+		{
+			title: 'Севастополь, ул. Вакуленчука 29/10, ТРЦ “Муссон”',
+		},
+		{
+			title: 'Калининград, около пос. Ласкино, ул. Терешковой 50',
+		},
+	]
+
+section.section.map
+	.section_in.map__in
+		.map__nav_w
+			h3.map__nav_title Филиалы:
+			ul.map__nav_list
+				each item in list
+					li.map__nav_item(class=item.mod)
+						a(href=item.cord).map__nav_item_link
+							span.map__nav_item_icon
+								+icon('mark-2', 'icon--size_mod')
+							span.map__nav_item_title= item.title
+
+			.map__nav_descr_w
+				.map__nav_descr_title Режим работы:
+				.map__nav_descr
+					p Звоните с 7:00 до 23:00 по МСК
+					p Техническая поддержка наших клиентов 16/7.
+
+		.map__frame_w
+			//- iframe.map__frame(src=`https://yandex.com/map-widget/v1/?um=constructor%3Adbdaef1ab3c7bad6d90147a02daeba881e64eec11e995c4b2603bdd78af385d6&amp;source=constructor` width="1045" height="720" frameborder="0")

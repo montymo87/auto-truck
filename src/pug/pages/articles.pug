@@ -1,0 +1,28 @@
+extends ../layout/layout
+
+block vars
+	//- include ../templates/project-vars
+	include ../templates/mixins/m-preview
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
+
+block content_block
+	-
+		mod = 'crumbs_section--block_mod'
+	include ../blocks/crumb-section
+
+	+preview({
+		heading: {
+			title: 'Статьи',
+		},
+		items: 9,
+		mod: 'preview--article_mod',
+		pagination: true,
+		card: {
+			mod: 'card--article_mod',
+			label: true,
+			img: 'card.jpg',
+			title: 'Lorem ipsum dolor sit amet consectetur. Velit in at fermentum malesuada.',
+			data: '01/01/2023',
+			read: 'ЧИТАТЬ СТАТЬЮ',
+		}
+	})
