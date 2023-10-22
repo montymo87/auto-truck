@@ -2,6 +2,8 @@ extends ../layout/layout
 
 block vars
 	//- include ../templates/project-vars
+	include ../templates/mixins/m-heading
+	include ../templates/mixins/m-quantity
 	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
 
 block content_block
@@ -12,6 +14,21 @@ block content_block
 	section.section.contacts
 		.section_in.contacts__in
 			+heading({
-				title: 'Адреса и контакты',
+				mod: 'heading--basket_mod',
+				title: 'Корзина',
+				link_title: 'Очистить корзину',
+				link_icon: true,
+				link_mod: '.js-clear-basket'
 			})
+
+	section.section.basket
+		.section_in.basket__in
+			.basket__empty_w
+				.basket__empty_icon
+					+icon('empty', 'icon--size_mod')
+
+				.basket__empty_title Ваша корзина пуста
+
+
+
 

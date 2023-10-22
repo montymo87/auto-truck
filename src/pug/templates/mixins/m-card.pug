@@ -4,7 +4,7 @@ mixin card(data)
 			if data.label
 				.card__label
 					+icon('hit', 'icon--size_mod')
-			a(href="#").card__img_link
+			a(href=`${data.video ? 'images/video.mp4' : '#'}` data-fancybox=`${data.video ? "video-gallery" : ''}` ).card__img_link
 				+picture({
 					img: data.img,
 					class: 'card__img_w',
@@ -15,7 +15,7 @@ mixin card(data)
 					span.card__play_btn
 						+icon('play-icon', 'icon--size_mod')
 			.card__info
-				a(href="#").card__title= data.title
+				a(href=`${data.video ? 'images/video.mp4' : '#'}` data-fancybox=`${data.video ? "video-gallery" : ''}`).card__title= data.title
 				if data.data
 					.card__data=data.data
 				if data.read

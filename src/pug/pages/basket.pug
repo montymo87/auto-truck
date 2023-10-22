@@ -2,6 +2,8 @@ extends ../layout/layout
 
 block vars
 	//- include ../templates/project-vars
+	include ../templates/mixins/m-heading
+	include ../templates/mixins/m-quantity
 	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'Index', template_name: 'index'}
 
 block content_block
@@ -12,6 +14,53 @@ block content_block
 	section.section.contacts
 		.section_in.contacts__in
 			+heading({
-				title: 'Адреса и контакты',
+				mod: 'heading--basket_mod',
+				title: 'Корзина',
+				link_title: 'Очистить корзину',
+				link_icon: true,
+				link_mod: '.js-clear-basket'
 			})
+
+	section.section.basket
+		.section_in.basket__in
+			.basket__form_w
+				form(action="#")
+					ul.basket__list
+						+loop_while(2)
+							li.basket__item
+								.basket__item_row
+									.basket__item_img_w
+										img(src="images/card.jpg", alt="")
+									a(href="#").basket__item__descr Mercedes Star Diagnosis C4 + ноутбук с ПО
+
+									.basket__item_control
+										.basket__item_control_row
+											.basket__item_control_item
+												.product-quantity(data-title="Quantity")
+													+quantity({
+														value: 0,
+														min: 0,
+														max: 100
+													})
+
+											.basket__item_control_item
+												.basket__item_price 59 990 ₽
+
+											.basket__item_control_item
+												button(type="button").basket__item_btn_remove.js-btn-basket-remove
+
+			.basket__total_row
+				.basket__total_item
+					.basket__total_price_w
+						.basket__total_title Итого:
+						.basket__total_price 82 990 ₽
+
+				.basket__total_item
+					a(href="#").btn_1.basket__total_btn
+						span.btn_title Оформить заказ
+						span.btn_icon
+							+icon('arrow-right-shevron', 'icon--size_mod')
+
+
+
 

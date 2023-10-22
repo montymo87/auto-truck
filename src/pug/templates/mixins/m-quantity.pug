@@ -1,0 +1,7 @@
+mixin quantity(data)
+	.quantity
+		button.input_number_decrement(class= `${data.color_mod ? 'input_number_decrement--gold' : 'input_number_decrement--transparent'}` type='button' aria-label='decrement minus')
+			+icon('-', 'icon--size_mod')
+		input.input_number(type='number' value=data.value min=data.min max=data.max class= `${data.border_disable ? 'input_number--border_disable' : ''}`)
+		button.input_number_increment(class= `${data.color_mod ? 'input_number_decrement--gold' : 'input_number_decrement--transparent'}` type='button' aria-label='decrement plus')
+			+icon('+', 'icon--size_mod')

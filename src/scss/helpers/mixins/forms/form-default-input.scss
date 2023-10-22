@@ -31,6 +31,10 @@
 	transition: box-shadow 0.3s ease 0s;
 	will-change: box-shadow;
 
+	.popup__req_form_item & {
+		background-color: transparent;
+	}
+
 	.cabinet & {
 		background-color: $gray;
 	}

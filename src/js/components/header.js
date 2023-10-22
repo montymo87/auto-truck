@@ -4,17 +4,20 @@ const header = () => {
 	const SELECTORS = {
 		header: '.js-header',
 		menuTrigger: '.js-header-menu-trigger',
+		menu: '.js-list-catalog',
 	};
 
 	const CLASSNAMES = {
 		bodyOpenMenuState: 'body--open_menu_state',
 		headerScrollState: 'header--scroll_state',
 		headerScrollPos: 'header--pos_state',
+		menuActiveState: 'menu_catalog--active_state',
 	};
 
 	const $body = document.body;
 	const $header = document.querySelector(SELECTORS.header);
 	const $menuTriggers = document.querySelectorAll(SELECTORS.menuTrigger);
+	const $menu = document.querySelector(SELECTORS.menu);
 
 	let isMenuOpen = false;
 	let prevScrollPos = window.scrollY;
@@ -48,6 +51,7 @@ const header = () => {
 			$header.classList.remove(CLASSNAMES.headerScrollPos);
 		} else if (prevScrollPos < window.scrollY) {
 			$header.classList.add(CLASSNAMES.headerScrollPos);
+			$menu.classList.remove(CLASSNAMES.menuActiveState);
 		} else if (prevScrollPos > window.scrollY) {
 			posDiff = prevScrollPos - window.scrollY > saveZone;
 			setTimeout(() => {

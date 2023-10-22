@@ -15,19 +15,17 @@ section.section.about
 	.section_in.about__in
 		.about__row
 			.about__col.about__col--img_mod
-				a(href="#").about__image_w
+				.about__image_w
 					+picture({
 						img: `laptop.png`,
 						class: 'about__col_img_w',
 						img_class: 'about__col_img',
 						alt: 'some image',
 					})
-					+picture({
-						img: `about_cover.jpg`,
-						class: 'about__cover_img_w',
-						img_class: 'about__cover_img',
-						alt: 'some image',
-					})
+					a.about__cover_img_w(href="images/video.mp4" data-fancybox="video-gallery")
+						img.about__cover_img(src="images/video-cover.jpg", alt="poster")
+						.about__cover_img_play_w
+							img(src="images/play.png", alt="play btn")
 
 			.about__col.about__col--info_mod
 				.about__info
