@@ -1,21 +1,26 @@
 @mixin form_el_radio {
 	position: relative;
 
-	padding-left: 3rem;
+	padding-left: 4rem;
 
-	font-size: 1.6rem;
-	color: $black;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: $black_2;
 	cursor: pointer;
+
+	span {
+		font-weight: 400;
+	}
 
 	&:before {
 		content: '';
 		position: absolute;
-		top: -1px;
+		top: -3px;
 		left: 0;
-		width: 2rem;
-		height: 2rem;
+		width: 2.5rem;
+		height: 2.5rem;
 		border-radius: 100%;
-		border: 1px solid $black;
+		border: 1px solid $black_2;
 		cursor: pointer;
 	}
 
@@ -24,12 +29,12 @@
 
 		content: '';
 		position: absolute;
-		top: 0.4rem;
+		top: 0.2rem;
 		left: 0.5rem;
-		width: 1rem;
-		height: 1rem;
+		width: 1.5rem;
+		height: 1.5rem;
 		border-radius: 100%;
-		background: $black;
+		background: $red;
 		opacity: 0;
 
 		.form_radio__element:checked + & {

@@ -1,0 +1,29 @@
+.popup.popup--req_mod(class=`js-popup-req` data-popup-id='login')
+	.popup__in
+		.popup__decor_w
+			.popup__decor
+		.popup__content
+			button.popup_close.js-popup-close(type="button" aria-label="Close Popup" tabindex="0")
+			.popup__content_in
+				.popup__content_title Lorem ipsum dolor sit amet consectetur
+				.popup__req_form_w
+					form(action="get")
+						.popup__req_form_in
+							.popup__req_form_item
+								+form_input({
+									id: 'application_name',
+									placeholder: 'Имя*',
+									required: true,
+								})
+							.popup__req_form_item
+								+form_input({
+									type: 'tel',
+									id: 'application_name',
+									placeholder: 'Номер телефона*',
+									required: true,
+								})
+							.popup__req_form_item
+								.popup__req_form_btn_w
+									button(type="submit").btn_4.popup__req_btn Отправить заявку
+
+				.popup__req_rights Отправляя заявку вы соглашаетесь на обработку своих персональных данных и принимаете Политику Конфиденциальности

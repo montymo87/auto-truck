@@ -20,6 +20,10 @@
 	transition: opacity 0.3s ease;
 	will-change: opacity;
 
+	&.popup--req_mod {
+		color: $white;
+	}
+
 	&:not(.popup--open_state) {
 		opacity: 0;
 		pointer-events: none;
@@ -42,12 +46,47 @@
 	border-radius: 3rem;
 	box-shadow: 0 0.4rem 1.5rem 0 rgba(0, 0, 0, 0.05);
 
+	.popup--req_mod & {
+		max-width: 95.4rem;
+		background-color: $black_2;
+
+		@include bp($point_2, min) {
+			max-width: 95.4rem;
+		}
+		@include bp($point_3) {
+			max-width: 50rem;
+		}
+	}
+
 	@include bp($point_2, min) {
 		padding: 8rem 5rem;
 	}
 	@include bp($point_3) {
 		padding: 9rem 2rem 4rem;
 	}
+}
+
+.popup__decor_w {
+	position: absolute;
+	right: 0;
+	top: 0;
+	overflow: hidden;
+	height: 100%;
+	width: 54rem;
+	border-radius: 3rem;
+	pointer-events: none;
+}
+
+.popup__decor {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 54rem;
+	height: 54rem;
+	transform: translate(38%, -50%);
+	opacity: 0.7;
+	background: radial-gradient(50% 50% at 50% 50%, rgba(255, 0, 0, 0.8) 0%, rgba(255, 0, 0, 0) 100%);
+	mix-blend-mode: lighten;
 }
 
 .popup_close {
@@ -110,6 +149,10 @@
 	max-width: 38rem;
 	width: 100%;
 	margin: 0 auto;
+
+	.popup--req_mod & {
+		max-width: 78.6rem;
+	}
 }
 
 .popup__content_title {
@@ -117,6 +160,10 @@
 	text-align: center;
 	font-size: 2.1rem;
 	color: $black;
+
+	.popup--req_mod & {
+		color: $white;
+	}
 
 	&:not(:last-child) {
 		@include bp($point_2, min) {
@@ -173,5 +220,42 @@
 
 	&:not(:last-child) {
 		margin-bottom: 3rem;
+	}
+}
+
+.popup__req_rights {
+	max-width: 45.8rem;
+	margin: 0 auto;
+	font-size: 1.2rem;
+	font-weight: 500;
+	text-align: center;
+	color: $gray_2;
+}
+
+.popup__req_form_w {
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 5rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.popup__req_form_in {
+	@include flex_block(row, wrap, center, center, center);
+
+	margin: 0 -2rem -2rem 0;
+}
+
+.popup__req_form_item {
+	padding: 0 2rem 2rem 0;
+
+	@include bp($point_2, min) {
+		min-width: 24.6rem;
+	}
+	@include bp($point_3) {
+		min-width: 100%;
 	}
 }

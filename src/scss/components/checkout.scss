@@ -1,0 +1,126 @@
+.checkout {
+	background-color: #f2f2f2;
+}
+
+.checkout__item_item {
+	background-color: $white;
+
+	@include bp($point_2, min) {
+		padding: 8rem 4rem;
+	}
+	@include bp($point_3) {
+		padding: 4rem 2rem;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 5rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.checkout__item_item_in {
+	max-width: 120rem;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.checkout__item__title {
+	font-size: 3rem;
+	font-weight: 400;
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 5rem;
+		}
+		@include bp($point_3) {
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.checkout__item__delivery_item {
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+}
+
+.checkout__item_recipient_input_label {
+	display: block;
+	margin-top: 2rem;
+	color: $gray_3;
+	font-size: 1.1rem;
+	font-weight: 500;
+}
+
+.checkout__item_recipient_list {
+	@include flex_block(row, wrap, flex-start, center, center);
+
+	margin: 0 -15rem -2rem 0;
+}
+
+.checkout__item_recipient_item {
+	max-width: 60rem;
+	width: 100%;
+
+	padding: 0 15rem 2rem 0;
+}
+
+.checkout__item_payment_list {
+	@include flex_block(row, wrap, flex-start, center, center);
+
+	margin: 0 -3rem -3rem 0;
+}
+
+.checkout__item_payment_item {
+	padding: 0 3rem 3rem 0;
+}
+
+.checkout__payment_input {
+	display: none;
+}
+
+.checkout__payment_card_in {
+	@include flex_block(row, nowrap, flex-start);
+
+	max-width: 34rem;
+	width: 100%;
+	padding: 3rem;
+	border-radius: 1rem;
+	border: 1px solid #aeaeae;
+	transition: border-color ease 0.3s;
+
+	.checkout__payment_input:checked ~ .checkout__payment_card & {
+		border-color: $red;
+	}
+}
+
+.checkout__payment_card_icon {
+	display: block;
+	flex: none;
+	width: 3rem;
+	height: 2.4rem;
+	margin-right: 2.5rem;
+	transition: color ease 0.3s;
+
+	.checkout__payment_input:checked ~ .checkout__payment_card & {
+		color: $red;
+	}
+}
+
+.checkout__item_payment_title {
+	font-size: 2.1rem;
+	font-weight: 600;
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+
+.checkout__item_payment_descr {
+	font-size: 1.5rem;
+	font-weight: 500;
+}

@@ -5,19 +5,20 @@ mixin header
 				a.header__logo_w(href="#")
 					img(src="images/logo.png", alt="site logo").header__logo
 				ul.header__control
-					li.header__control_item
+					li.header__control_item.header__control_item--phone_mod
 						a(href="#").header__control_phone +7 (989) 261-39-83
-					li.header__control_item
-						.header__control_location_dropdown
+					li.header__control_item.header__control_item--location_mod
+						.header__control_location_dropdown.js-locatio-dropdown
 							button(type="button").header__control_location.btn_1
 								span.header__control_location_icon
 									+icon('mark', 'icon--size_mod')
 								span.header__control_location_title Москва
 								span.header__control_location_arrow_icon
 									+icon('arrow-down', 'icon--size_mod')
-							//- ul.header__control_location_list
-							//- 	each item in ['Москва', 'Санкт-Петербург', 'Ростов', 'Краснодар', 'Севастополь', 'Калининград']
-							//- 		li.header__control_location_item= item
+							ul.header__control_location_list
+								each item in ['Москва', 'Санкт-Петербург', 'Ростов', 'Краснодар', 'Севастополь', 'Калининград']
+									li.header__control_location_item
+										a(href="#").header__control_location_item_link= item
 
 					li.header__control_item.header__control_item--search_mod
 						form.header__control_search_form
@@ -32,19 +33,22 @@ mixin header
 								button(type="submit" aria-lebel="search button").header__search_btn
 									+icon('search', 'icon--size_mod')
 
-					li.header__control_item
+					li.header__control_item.header__control_item--whatsapp_mod
 						a(href="#").header__control_whatsapp.btn_1
 							span.header__control_whatsapp_icon
 								+icon('whatsapp', 'icon--size_mod')
 							span.header__control_whatsapp_title Написать в WhatsApp
 
-					li.header__control_item
+					li.header__control_item.header__control_item--basket_mod
 						a.header__control_basket(href="#").header__control_basket--active_state
 							+icon('basket', 'icon--size_mod')
 							span.header__control_basket_item
 
-					li.header__control_item
+					li.header__control_item.header__control_item--login_mod
 						a.header__control_login.js-popup-login-trigger(href="#") Войти
+
+				button.header__menu_trigger.js-header-menu-trigger(type="button" aria-label="Toggle menu")
+					span
 
 			.header__bottom_row
 				button.header__catalog_trigger.js-header-catalog-menu-trigger(type="button" aria-label="Toggle menu")
@@ -57,4 +61,5 @@ mixin header
 						li.header__catalog_item
 							a(href="#").header__catalog_link= item
 
+		.header__catalog_row
 			include ../../blocks/menu-catalog

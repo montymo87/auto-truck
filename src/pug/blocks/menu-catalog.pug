@@ -1,0 +1,142 @@
+-
+	list = [
+		{
+			tag: 'button',
+			type: "button",
+			title: 'Диагностические сканеры',
+			sublist: [
+				{
+					mod: 'menu_catalog__sub_list_w--column_mod',
+					sublist_category: [
+						{
+						title: 'АВТОСКАНЕРЫ LAUNCH',
+						sub_cat_list: [ 'Готовые комплекты с планшетом', 'Сканеры', 'Система TMPS',]
+						},
+					]
+				},
+				{
+					sublist_arr: [
+						'Переходники на нестандартные размеры',
+						'Жесткие диски с софтом',
+						'Мультимарочные автосканеры (грузовые)',
+						'Диагностическое ПО и обновления',
+						'Мультимарочные автосканеры (легковые)',
+						'Марочные диагностические адаптеры',
+						'Дилерские автосканеры',
+						'Мотор-тестеры, осциллографы',
+						'Готовые диагностические комплекты',
+					]
+				}
+			]
+		},
+		{
+			tag: 'button',
+			type: "button",
+			title: 'Оборудование для чип-тюнинга',
+			sublist: [
+				{
+					mod: 'menu_catalog__sub_list_w--column_mod',
+					sublist_category: [
+						{
+						title: 'АВТОСКАНЕРЫ LAUNCH',
+						sub_cat_list: [ 'Готовые комплекты с планшетом', 'Сканеры', 'Система TMPS',]
+						},
+						{
+						title: 'АВТОСКАНЕРЫ LAUNCH',
+						sub_cat_list: [ 'Готовые комплекты с планшетом', 'Сканеры', 'Система TMPS',]
+						},
+						{
+						title: 'АВТОСКАНЕРЫ LAUNCH',
+						sub_cat_list: [ 'Готовые комплекты с планшетом', 'Сканеры', 'Система TMPS',]
+						},
+						{
+							title: 'АВТОСКАНЕРЫ LAUNCH',
+						},
+					]
+				},
+				{
+					sublist_arr: [
+						'Переходники на нестандартные размеры',
+						'Жесткие диски с софтом',
+						'Мультимарочные автосканеры (грузовые)',
+						'Диагностическое ПО и обновления',
+						'Мультимарочные автосканеры (легковые)',
+						'Марочные диагностические адаптеры',
+						'Дилерские автосканеры',
+						'Мотор-тестеры, осциллографы',
+						'Готовые диагностические комплекты',
+					]
+				}
+			]
+		},
+		{
+			title: 'Все для автоключей',
+			tag: 'button',
+			type: "button",
+			sublist: [
+				{
+					sublist_arr: [
+						'Переходники на нестандартные размеры',
+						'Жесткие диски с софтом',
+						'Мультимарочные автосканеры (грузовые)',
+						'Диагностическое ПО и обновления',
+						'Мультимарочные автосканеры (легковые)',
+						'Марочные диагностические адаптеры',
+						'Дилерские автосканеры',
+						'Мотор-тестеры, осциллографы',
+						'Готовые диагностические комплекты',
+					]
+				}
+			]
+		},
+		{
+			tag: 'button',
+			type: "button",
+			title: 'Толщинометры',
+		},
+		{
+			tag: 'button',
+			type: "button",
+			title: 'Эндоскопы',
+		},
+		{
+			tag: 'button',
+			type: "button",
+			title: 'Оборудование для корректировки одометров',
+		},
+		{
+			tag: 'button',
+			type: "button",
+			title: 'Очистка форсунок',
+		},
+	]
+
+.menu_catalog.js-list-catalog
+	ul.menu_catalog__list
+		each item in list
+			li.menu_catalog__item.js-list-trigger
+				#{item.tag}(href=item.href type=item.type).menu_catalog__item_btn
+					span.menu_catalog__item_title= item.title
+					span.menu_catalog__item_icon
+						+icon('arrow-right-shevron', 'icon--size_mod')
+
+				if item.sublist
+					.menu_catalog__sub
+						.menu_catalog__sub_w.js-sublist-catalog
+							each list in item.sublist
+								.menu_catalog__sub_list_w(class=list.mod)
+									ul.menu_catalog__sub_list
+										if list.sublist_arr
+											each subitem in list.sublist_arr
+												li.menu_catalog__sub_item
+													a(href="#").menu_catalog__sub_title= subitem
+										else
+											each subitem in list.sublist_category
+												li.menu_catalog__sub_item
+													a(href="#").menu_catalog__sub_title= subitem.title
+													if subitem.sub_cat_list
+														ul.menu_catalog__sub_category_list
+															each category_item in subitem.sub_cat_list
+																li.menu_catalog__sub_category_item
+																	a(href="#").menu_catalog__sub_category_link= category_item
+

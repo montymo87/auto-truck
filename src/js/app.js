@@ -7,8 +7,14 @@ import tabs from 'components/tabs';
 import initPopup from 'components/init-popup';
 import alert from 'components/alert';
 import selectInitSearch from 'components/select-init-search';
+import popupFancy from 'components/popup-fancy';
+import quantity from 'components/quantity';
+import basketRemove from 'components/basket-remove';
+// import mapNew from 'components/map-new';
+// import catalogMenu from 'components/catalog-menu';
 
 import layout from 'layout/layout';
+import Accordion from './components/accordion';
 import { pageLoad } from './utils';
 
 export default class App {
@@ -43,11 +49,6 @@ export default class App {
 		pageLoad(() => {
 			document.body.classList.add('body--loaded');
 
-			mobileSlider(1024);
-			previevSlider();
-			promotionSlider();
-			productSlider();
-			clipText();
 			tabs({
 				wrapper: '.js-product-tab',
 				trigger: '.js-product-tab-trigger',
@@ -55,11 +56,27 @@ export default class App {
 				triggerClass: 'product_tab__tabs_button',
 				contentClass: 'product_tab__tabs_content',
 			});
+			mobileSlider(1024);
+			previevSlider();
+			promotionSlider();
+			productSlider();
+			clipText();
 			initPopup('.js-popup-login-trigger', '.js-popup-login');
 			initPopup('.js-popup-pas-trigger', '.js-popup-pas');
 			initPopup('.js-popup-reg-trigger', '.js-popup-reg');
+			initPopup('.js-popup-req-trigger', '.js-popup-req');
 			alert();
-			// selectInitSearch();
+			selectInitSearch();
+			popupFancy();
+			quantity();
+			basketRemove();
+			// mapNew();
+
+			const accordion = Accordion({
+				triggers: document.querySelectorAll('.mobile_menu__dropdown_item_head'),
+				activeStateName: 'mobile_menu__dropdown_item--active-mod',
+			});
+			// catalogMenu();
 		});
 		setTimeout(() => {
 			this.importPage();

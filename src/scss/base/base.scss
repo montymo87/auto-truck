@@ -7,7 +7,6 @@
 :root {
 	--full-screen: calc(var(--vh, 1vh) * 100);
 
-	--height-header: 16rem;
 	--height-footer: 10rem;
 
 	@include bp($point_2, min) {
@@ -17,6 +16,13 @@
 	@include bp($point_3) {
 		--gl-indent: 2rem;
 		--gl-vr-indent: 3rem;
+	}
+
+	@include bp(1440px, min) {
+		--height-header: 16rem;
+	}
+	@include bp(1439px) {
+		--height-header: 8.5rem;
 	}
 }
 
@@ -75,6 +81,15 @@ body {
 		height: var(--height-header);
 		background-color: $black_2;
 		content: '';
+
+		@include bp(1439px) {
+			display: none;
+		}
+	}
+
+	&.body--popup_open,
+	&.body--open_menu_state {
+		overflow: hidden;
 	}
 }
 
