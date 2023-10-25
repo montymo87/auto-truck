@@ -1,12 +1,28 @@
 .map {
 	color: $black_2;
+	padding-bottom: 0;
+}
+
+.map__in {
+	position: relative;
 }
 
 .map__nav_w {
-	max-width: 54rem;
 	width: 100%;
 
 	box-shadow: 0.7rem 1rem 4rem 0 rgba(0, 0, 0, 0.2);
+	background-color: $white;
+
+	@include bp($point_2, min) {
+		position: absolute;
+		z-index: 10;
+		top: -5rem;
+		left: 0;
+		max-width: 54rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 3rem;
+	}
 }
 
 .map__nav_list {
@@ -19,7 +35,8 @@
 	@include flex_block(row, nowrap, flex-start, center, center);
 	position: relative;
 	padding: 1rem 3rem;
-	min-height: 6rem;
+	min-height: 6.2rem;
+	margin-top: -2px;
 	cursor: pointer;
 
 	font-size: 1.5rem;
@@ -29,7 +46,7 @@
 
 	&:after {
 		position: absolute;
-		bottom: 0;
+		bottom: 1px;
 		left: 50%;
 		display: block;
 		width: calc(100% - 6rem);
@@ -46,7 +63,7 @@
 	// 	}
 	// }
 
-	.map__nav_item--active_state &,
+	&.map__nav_item--active_state,
 	&:hover {
 		text-decoration: none;
 		color: $white;
@@ -94,10 +111,41 @@
 .map__nav_descr {
 	font-size: 1.5rem;
 	font-weight: 500;
+}
 
-	p {
-		&:not(:last-child) {
-			margin-bottom: 1rem;
-		}
+.map__nav_descr_worktime,
+.map__nav_descr_clients {
+	font-size: 1.5rem;
+	font-weight: 500;
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+
+.map__frame_w {
+	position: relative;
+	@include bp($point_2, min) {
+		height: 69rem;
+	}
+	@include bp($point_3) {
+		height: 40rem;
+	}
+}
+
+#map {
+	height: 100%;
+
+	@include bp($point_2, min) {
+		position: absolute;
+		top: 0;
+		left: 50%;
+
+		width: 100vw;
+		transform: translateX(-50%);
+	}
+
+	@include bp($point_3) {
+		width: 100%;
 	}
 }

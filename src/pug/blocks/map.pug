@@ -3,21 +3,43 @@
 		{
 			title: 'Москва, Локомотивный проезд 21 с5',
 			mod: 'map__nav_item--active_state',
+			cord: '55.844733, 37.572908',
+			link: '#',
+			worktime: 'Звоните с 7:00 до 23:00 по МСК',
+			clients: 'Техническая поддержка наших клиентов 16/7.'
 		},
 		{
 			title: 'Санкт-Петербург, ул. Заречная 45 к2',
+			cord: '60.081960, 30.350516',
+			link: '#',
+			worktime: 'Звоните с 7:00 до 23:00 по Санкт-Петербург',
+			clients: 'Техническая поддержка наших клиентов 16/7.'
 		},
 		{
 			title: 'Ростов, ул. Скачкова 52',
+			cord: '47.225530, 39.667177',
+			link: '#',
+			worktime: 'Звоните с 7:00 до 23:00 по Ростов',
+			clients: 'Техническая поддержка наших клиентов 16/7.'
 		},
 		{
 			title: 'Краснодар, ул. Дальняя 4/4',
+			cord: '45.063063, 38.967516',
+			link: '#',
+			worktime: 'Звоните с 7:00 до 23:00 по Краснодар',
+			clients: 'Техническая поддержка наших клиентов 16/7.'
 		},
 		{
 			title: 'Севастополь, ул. Вакуленчука 29/10, ТРЦ “Муссон”',
+			cord: '44.589136, 33.489131',
+			link: '#',
+			worktime: 'Звоните с 7:00 до 23:00 по Севастополь',
+			clients: 'Техническая поддержка наших клиентов 16/7.'
 		},
 		{
 			title: 'Калининград, около пос. Ласкино, ул. Терешковой 50',
+			cord: '54.646557, 20.441703',
+			link: '#',
 		},
 	]
 
@@ -27,8 +49,8 @@ section.section.map
 			h3.map__nav_title Филиалы:
 			ul.map__nav_list
 				each item in list
-					li.map__nav_item(class=item.mod)
-						a(href=item.cord).map__nav_item_link
+					li.map__nav_item
+						a(href=item.link class=item.mod data-cord=item.cord data-worktime=item.worktime data-clients=item.clients).map__nav_item_link.js-map-trigger
 							span.map__nav_item_icon
 								+icon('mark-2', 'icon--size_mod')
 							span.map__nav_item_title= item.title
@@ -36,8 +58,8 @@ section.section.map
 			.map__nav_descr_w
 				.map__nav_descr_title Режим работы:
 				.map__nav_descr
-					p Звоните с 7:00 до 23:00 по МСК
-					p Техническая поддержка наших клиентов 16/7.
+					.map__nav_descr_worktime.js-map-worktime Звоните с 7:00 до 23:00 по МСК
+					.map__nav_descr_clients.js-map-clients Техническая поддержка наших клиентов 16/7.
 
 		.map__frame_w
-			//- iframe.map__frame(src=`https://yandex.com/map-widget/v1/?um=constructor%3Adbdaef1ab3c7bad6d90147a02daeba881e64eec11e995c4b2603bdd78af385d6&amp;source=constructor` width="1045" height="720" frameborder="0")
+			#map.map__frame

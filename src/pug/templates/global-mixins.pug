@@ -1,6 +1,8 @@
 mixin head(array)
 	meta(charset='UTF-8')
 	title!= environment === 'development' ? `${environment} | ${array.title_inner}` : array.title_inner
+	script(src="https://api-maps.yandex.ru/2.1/?apikey=de0ee812-515f-4988-a580-639be65741a6&lang=ru_RU" type="text/javascript")
+
 	meta(
 		name="description"
 		content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")

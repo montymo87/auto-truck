@@ -10,7 +10,7 @@ import selectInitSearch from 'components/select-init-search';
 import popupFancy from 'components/popup-fancy';
 import quantity from 'components/quantity';
 import basketRemove from 'components/basket-remove';
-// import mapNew from 'components/map-new';
+import map from 'components/map-new';
 // import catalogMenu from 'components/catalog-menu';
 
 import layout from 'layout/layout';
@@ -70,7 +70,8 @@ export default class App {
 			popupFancy();
 			quantity();
 			basketRemove();
-			// mapNew();
+			map();
+			/* eslint-disable */
 
 			const accordion = Accordion({
 				triggers: document.querySelectorAll('.mobile_menu__dropdown_item_head'),
